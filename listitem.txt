@@ -1,0 +1,10 @@
+To improve the accessibility of this code, we need to ensure that the <li> element is contained within a <ul> or <ol> element. Here's an updated code snippet:
+
+<ul>
+  <li class="some-class">
+    <a href="/contact-us/" class="some-class">Contact Us</a>
+    <div class="some-class"></div>
+  </li>
+</ul>
+
+By wrapping the <li> element in a <ul> element, we ensure that it is semantically correct and accessible to all users, including those using assistive technologies.
