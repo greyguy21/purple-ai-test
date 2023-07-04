@@ -1,3 +1,3 @@
 <button class="some-class" id="some-id" aria-label="Some Label"><i class="some-class"></i></button>
 
-The code can be improved by adding an aria-label attribute to the button element. This attribute provides a text alternative for the button that can be read by screen readers, making it more accessible for users who rely on assistive technology. The value of the aria-label attribute should be a concise and descriptive label that accurately describes the purpose of the button.
+The code can be improved by adding an aria-label attribute to the button element. This attribute provides a text alternative for the button that can be read by screen readers, making the button more accessible to users with visual impairments. The value of the aria-label attribute should be a brief, descriptive label that conveys the purpose of the button.
