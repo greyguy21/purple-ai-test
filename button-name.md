@@ -1,3 +1,3 @@
-<button class="some-class" id="some-id" aria-label="Some Label"><i class="some-class"></i></button>
+<button class="some-class" id="some-id" aria-label="Click me"><i class="some-class">Click me</i></button>
 
-The code can be improved by adding an aria-label attribute to the button element. This attribute provides a text alternative for the button that can be read by screen readers, making the button more accessible to users with visual impairments. The value of the aria-label attribute should be a brief, descriptive label that conveys the purpose of the button.
+In this updated code, the aria-label attribute has been added to provide a text alternative for the button. The text "Click me" has also been added inside the <i> tag to provide discernible text for users who may not be able to see the icon.
