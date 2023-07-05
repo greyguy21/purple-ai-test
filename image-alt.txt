@@ -1,3 +1,3 @@
 <img src="image.jpg" alt="Description of the image" role="presentation"> 
 
-This code ensures that the <img> element has alternate text and a role of none or presentation. The "alt" attribute provides a description of the image for users who cannot see it, while the "role" attribute specifies that the image should be treated as a decorative element and not read out by screen readers.
+This code ensures that the <img> element has alternate text and a role of none or presentation. The "alt" attribute provides a description of the image for users who cannot see it, while the "role" attribute specifies that the image should be treated as a decorative element and not read by screen readers.
