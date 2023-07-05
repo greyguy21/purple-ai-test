@@ -1,0 +1,11 @@
+<form>
+  <label for="inputField">Input Field:</label>
+  <input type="text" id="inputField" name="inputField">
+  <button type="submit">Submit</button>
+</form>
+
+Explanation: 
+- Added a label element with a "for" attribute that matches the "id" attribute of the input field.
+- Added an "id" attribute to the input field.
+- The label text "Input Field:" is descriptive of the input field.
+- By using the "for" attribute, clicking on the label will focus the input field.
