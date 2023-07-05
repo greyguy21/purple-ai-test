@@ -1,0 +1,18 @@
+{
+    "button-name": {
+        "needsHTML": true, 
+        "basePrompt": "Improve accessibility of this code with problem ${i.issueDescription}: ${i.basicHTMLForm}"
+    },
+    "empty-heading": {
+        "needsHTML": true, 
+        "basePrompt": "Improve accessibility of this code with problem ${i.issueDescription}: ${i.basicHTMLForm}"
+    }, 
+    "listitem": {
+        "needsHTML": true, 
+        "basePrompt": "Improve accessibility of this code with problem ${i.issueDescription}: ${i.basicHTMLForm}"
+    }, 
+    "aria-required-parent": {
+        "needsHTML": false, 
+        "basePrompt": "What HTML elements with aria roles should have aria parent roles?"
+    }
+}
