@@ -1,0 +1,1 @@
+<area shape=""some-shape"" coords=""100,100,100,100"" href=""some-link"" alt=""Description of the link"">
