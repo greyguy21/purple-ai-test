@@ -1,4 +1,4 @@
-To improve the accessibility of this code, we need to ensure that the <li> element is contained within a <ul> or <ol> element. Here's an updated code snippet:
+To improve the accessibility of this code, the <li> element should be contained within a <ul> or <ol> element. Here is an updated version of the code:
 
 <ul>
   <li class="some-class">
@@ -7,4 +7,4 @@ To improve the accessibility of this code, we need to ensure that the <li> eleme
   </li>
 </ul>
 
-By wrapping the <li> element in a <ul> element, we ensure that it is semantically correct and accessible to all users, including those using assistive technologies.
+By wrapping the <li> element in a <ul> element, we ensure that the list item is part of a list, which makes it easier for screen readers to navigate and understand the content.
