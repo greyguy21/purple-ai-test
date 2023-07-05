@@ -5,7 +5,6 @@
 </form>
 
 Explanation: 
-- Added a label element with a "for" attribute that matches the "id" attribute of the input field.
-- Added an "id" attribute to the input field.
-- The label text "Input Field:" is descriptive of the input field.
-- By using the "for" attribute, clicking on the label will focus the input field.
+- Added a label element with a "for" attribute that matches the "id" of the input field. 
+- The label text "Input Field:" is descriptive and helps users understand the purpose of the input field. 
+- The "name" attribute is added to the input field for server-side processing.
