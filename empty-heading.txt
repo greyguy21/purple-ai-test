@@ -1,1 +1,0 @@
-<h1 class="some-class">Heading Text Goes Here</h1>
