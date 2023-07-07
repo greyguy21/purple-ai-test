@@ -1,3 +1,0 @@
-<a href="https://example.com" style="text-decoration: underline;">Link to Example</a>
-
-This code adds an underline to the link, which distinguishes it from the surrounding text without relying on color.
