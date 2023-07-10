@@ -1,3 +1,4 @@
 {
-  "div_aria-hidden": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <!-- content here -->\n</div>"
+  "div_aria-hidden": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <!-- content here -->\n</div>",
+  "div_aria-hidden_data-slick-index_style_tabindex_div": "<div aria-hidden=\"true\" data-slick-index=\"3\" style=\"width: 184px;\" tabindex=\"-1\"><div tabindex=\"-1\"></div></div>"
 }
