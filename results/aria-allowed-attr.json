@@ -1,3 +1,1 @@
-{
-  "aria-allowed-attr": "The code is already correct and includes a role with a valid aria attribute. Here it is again for reference:\n\n```<a class=\"some-class\" aria-label=\"some-label\"><i class=\"some-class\" aria-hidden=\"true\"></i> </a>``` \n\nThe ```aria-label``` attribute provides a text alternative for the icon inside the ```<a>``` element, while the ```aria-hidden``` attribute hides the icon from assistive technologies like screen readers."
-}
+{"aria-allowed-attr":"The code is already correct and includes a role with a valid aria attribute. Here it is again for reference:\n\n```<a class=\"some-class\" aria-label=\"some-label\"><i class=\"some-class\" aria-hidden=\"true\"></i> </a>``` \n\nThe ```aria-label``` attribute provides a text alternative for the icon inside the ```<a>``` element, while the ```aria-hidden``` attribute hides the icon from assistive technologies like screen readers."}
