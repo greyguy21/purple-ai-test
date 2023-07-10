@@ -1,3 +1,1 @@
-{
-  "empty-table-header": "<table>\n  <thead>\n    <tr>\n      <th aria-label=\"some-label\">Table Heading</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Table Data</td>\n    </tr>\n  </tbody>\n</table>"
-}
+{"empty-table-header":"<table>\n  <thead>\n    <tr>\n      <th aria-label=\"some-label\">Table Heading</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Table Data</td>\n    </tr>\n  </tbody>\n</table>"}
