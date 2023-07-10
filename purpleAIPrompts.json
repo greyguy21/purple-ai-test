@@ -100,7 +100,7 @@
         "needsHtml": false
     },
     "frame-title-unique": {
-        "prompt": "Suggest titles for the different iframe elements so that there are no duplicates ``` <iframe ... title=\"myFrame1\"> frame body </iframe> <iframe ... title=\"myFrame1\"> frame body </iframe> ```",
+        "prompt": "Suggest titles for the different iframe elements so that there are no duplicates ``` <`iframe` ... title=\"myFrame1\"> frame body </iframe> <`iframe` ... title=\"myFrame1\"> frame body </iframe> ```",
         "needsHtml": false
     },
     "frame-title": {
