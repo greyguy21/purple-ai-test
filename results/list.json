@@ -1,0 +1,3 @@
+{
+  "list": "<ul role=\"list\" aria-label=\"List of fruits\">\n  <li role=\"listitem\">Apple</li>\n  <li role=\"listitem\">Banana</li>\n  <li role=\"listitem\">Orange</li>\n</ul>"
+}
