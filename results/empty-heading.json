@@ -1,3 +1,1 @@
-{
-  "empty-heading": "To fix the code, remove the `aria-hidden=\"true\"` attribute and add text between the opening and closing `<h1>` tags. For example:\n\n```\n<h1>Page Title</h1>\n```\n\nThis will ensure that the heading is not empty and can be accessed by screen readers."
-}
+{"empty-heading":"To fix the code, remove the `aria-hidden=\"true\"` attribute and add text between the opening and closing `<h1>` tags. For example:\n\n```\n<h1>Page Title</h1>\n```\n\nThis will ensure that the heading is not empty and can be accessed by screen readers."}
