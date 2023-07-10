@@ -1,3 +1,1 @@
-{
-  "aria-dialog-name": "```\n<div role=\"dialog\" id=\"some-id\" aria-label=\"Dialog Title\"></div>\n```\nor\n```\n<div role=\"dialog\" id=\"some-id\" aria-labelledby=\"dialog-title\"></div>\n<h2 id=\"dialog-title\">Dialog Title</h2>\n```"
-}
+{"aria-dialog-name":"```\n<div role=\"dialog\" id=\"some-id\" aria-label=\"Dialog Title\"></div>\n```\nor\n```\n<div role=\"dialog\" id=\"some-id\" aria-labelledby=\"dialog-title\"></div>\n<h2 id=\"dialog-title\">Dialog Title</h2>\n```"}
