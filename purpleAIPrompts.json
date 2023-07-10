@@ -1,0 +1,322 @@
+{
+    "area-alt" : {
+        "prompt": "Fix the code to include alt text inside <area>```<area shape=\"some-shape\" coords=\"100,100,100,100\" href=\"some-link\" >```",
+        "needsHtml": false
+    },
+    "aria-allowed-attr": {
+        "prompt": "Fix the code to include a role with a valid aria attribute ```<a class=\"some-class\" aria-label=\"some-label\"><i class=\"some-class\" aria-hidden=\"true\"></i> </a>```",
+        "needsHtml": false
+    },
+    "aria-command-name": {
+        "prompt": "Make this <div> accessible by ensuring every aria button, link and menuitem has an accessible name ```<div role=\"link\" ></div>```",
+        "needsHtml": false
+    },
+    "aria-hidden-body": {
+        "prompt": "Fix this code to ensure aria-hidden='true' is not present on the document body.<body aria-hidden=”true\">some-text</body>",
+        "needsHtml": false
+    },
+    "aria-hidden-focus": {
+        "prompt": "Fix this code to ensures aria-hidden elements are not focusable nor contain focusable elements ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "aria-input-field-name": {
+        "prompt": "Fix this code to ensure every ARIA input field has an accessible name ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "aria-meter-name": {
+        "prompt": "Fix this code to ensure every ARIA meter node has an accessible name```<div role=\"meter\" id=\"some-id\">some-text</div>```",
+        "needsHtml": false
+    },
+    "aria-progressbar-name": {
+        "prompt": "Fix this code to ensure every ARIA progressbar node has an accessible name```<div role=\"progressbar\" id=\"some-id\">some-text</div>```",
+        "needsHtml": false
+    },
+    "aria-required-attr": {
+        "prompt": "Fix this code to ensure every ARIA progressbar node has an accessible name```<div role=\"progressbar\" id=\"some-id\">some-text</div>```",
+        "needsHtml": false
+    },
+    "aria-required-children": {
+        "prompt": "What HTML elements with aria roles should contain the corresponding child roles?",
+        "needsHtml": false
+    }, 
+    "aria-required-parent": {
+        "prompt": "What HTML elements with aria roles should have aria parent roles?",
+        "needsHtml": false
+    },
+    "aria-roles": {
+        "prompt": "Fix the code with invalid element role ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "aria-toggle-field-name": {
+        "prompt": "Fix this code to have valid aria attribute: ${htmlSnippet}",
+        "needsHtml": true
+    }, 
+    "aria-tooltip-name": {
+        "prompt": "Fix this code to have valid aria attribute: ```<div role=\"tooltip\" id=\"some-id\" aria-label=\"\"></div>```",
+        "needsHtml": false
+    },
+    "aria-valid-attr-value": {
+        "prompt": "Fix this code with invalid aria attributes’ values: ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "aria-valid-attr": {
+        "prompt": "Fix this code with invalid aria attributes: ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "blink": {
+        "prompt": "Fix this code by avoiding the use of <blink> elements ```<p><blink>some-text</blink></p>```",
+        "needsHtml": false
+    },
+    "button-name": {
+        "prompt": "Fix this code to ensure button has aria-label or aria-labelledby in <button> ```<button id=\"val\" value=\"Button Name\"></button>``` Fix this code by adding a role of presentation or none <button id=\"some-id\" value=\"some-value\" tabindex=\"-1\"></button>",
+        "needsHtml": false
+    },
+    "bypass": {
+        "prompt": "Give code examples where HTML page has an internal skip link or a heading or a landmark region",
+        "needsHtml": false
+    },
+    "definition-list": {
+        "prompt": "Fix this code to include 1 or more <dd> inside <dt> <dl> <dt>some-dt</dt> <div> <dt>some-dt</dt> </div> </dl>",
+        "needsHtml": false
+    }, 
+    "dlitem": {
+        "prompt": "Fix this code by containing it in <dl> <dt>some-dt</dt> <dd>some-dd</dd> <dt>some-dt</dt> <dd>some-dd</dd>",
+        "needsHtml": false
+    }, 
+    "document-title": {
+        "prompt": "Give a code example to add a title to a HTML document using <title>",
+        "needsHtml": false
+    }, 
+    "duplicate-id-aria": {
+        "prompt": "Fix this code to remove duplicate id attributes. ``` <div role=\"some-role\" id=\"some-id\" id=\"some-id\">some-text</div> ```",
+        "needsHtml": false
+    }, 
+    "form-field-multiple-labels": {
+        "prompt": "Fix this code to ensure form field does not have multiple label elements <input type=\"checkbox\" id=\"some-id\" aria-labelledby=\"some-label\"/> <label for=\"some-for\" aria-hidden=\"true\">some-text</label> <label for=\"some-for\" id=\"some-id\">some-text</label>",
+        "needsHtml": false
+    },
+    "frame-focusable-content": {
+        "prompt": "Provide examples of <frame> and <iframe> elements with focusable content that do not have tabindex=-1. Add any other attributes or elements to ensure it is accessible.",
+        "needsHtml": false
+    },
+    "frame-title-unique": {
+        "prompt": "Suggest titles for the different iframe elements so that there are no duplicates ``` <iframe ... title=\"myFrame1\"> frame body </iframe> <iframe ... title=\"myFrame1\"> frame body </iframe> ```",
+        "needsHtml": false
+    },
+    "frame-title": {
+        "prompt": "Provide example of an iframe that has an accessible name",
+        "needsHtml": false
+    },
+    "html-has-lang": {
+        "prompt": "What are valid values for the lang attribute?",
+        "needsHtml": false
+    },
+    "html-lang-valid": {
+        "prompt": "What are valid values for the lang attribute?",
+        "needsHtml": false
+    },
+    "image-alt": {
+        "prompt": "Ensure an image element is accessible to the screen reader via alt, or aria-label attributes. Also, give me snippets of image elements with the role of none or presentation.",
+        "needsHtml": false
+    },
+    "input-button-name": {
+        "prompt": "Suggest ways the input button is accessible to the screen reader <input type=\"button\" id=\"id\" />",
+        "needsHtml": false
+    },
+    "input-image-alt": {
+        "prompt": "Ways for image type input to have alternate text ``` <input type=\"image\" src=\"image.png\" name=\"some-name\"> ```",
+        "needsHtml": false
+    },
+    "link-in-text-block": {
+        "prompt": "Suggest colour combinations such that the link text have a colour contrast of 3:1 or higher with the background. Do not give me #000 and #FFF suggestions. ",
+        "needsHtml": false
+    },
+    "label": {
+        "prompt": "Provide an example of a form element that is semantically correct and accessible.",
+        "needsHtml": false
+    },
+    "link-name": {
+        "prompt": "Suggest ways to ensure the link labels are not duplicated without changing the content within the anchor tag and without introducing a visually hidden item in the DOM. ```<a href=”some-link”>Read More…</a> <a href=”some-link2”>Read More…</a>```",
+        "needsHtml": false
+    },
+    "list": {
+        "prompt": "Provide an example of a snippet with all <li> elements contained within <ul> or <ol>. Add any attributes to ensure accessibility.",
+        "needsHtml": false
+    },
+    "listitem": {
+        "prompt": "Provide an example of a snippet with all <li> elements contained within <ul> or <ol>. Add any attributes to ensure accessibility.",
+        "needsHtml": false
+    },
+    "marquee": {
+        "prompt": "Suggest an alternative to the marquee element ${htmlElement}",
+        "needsHtml": true
+    },
+    "meta-refresh": {
+        "prompt": "Omit the “http-equiv” attribute and give a JavaScript snippet to increase the refresh time to be greater than 20 hours given this meta element ``` <meta http-equiv=\"refresh\" content=\"10\" url=\"http://www.yourdomain.com/index.html\"> ```",
+        "needsHtml": false
+    },
+    "meta-viewport": {
+        "prompt": "Ensure the meta element does not disable text scaling and zooming (omit user-scalable attribute if present). Add any other thing to make it more accessible.",
+        "needsHtml": false
+    },
+    "nested-interactive": {
+        "prompt": "Ways to make this snippet not have nested interactivity? ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "no-autoplay-audio": {
+        "prompt": "Provide an example of a video or audio element with autoplay attribute that has control mechanism and does not autoplay for more than 3 seconds. Add other accessible attributes if necessary.",
+        "needsHtml": false
+    },
+    "object-alt": {
+        "prompt": "Given this object element, what are ways to make it more accessible to screen readers? ``` <object data=\"path/to/content\"><!-- some content --></object> ```",
+        "needsHtml": false
+    },
+    "role-img-alt": {
+        "prompt": "Given this snippet of code, what are ways for screen-readers to access the elements with image roles? ``` <div role=\"img\" id=\"violation1\"></div> ```",
+        "needsHtml": false
+    },
+    "scrollable-region-focusable": {
+        "prompt": "Ensure this element that is scrollable is keyboard accessible ``` <div id=\"some-id\"> <!-- scrollable content --> </div> ```",
+        "needsHtml": false
+    },
+     "select-name": {
+        "prompt": "Ways to make this select element accessible? ``` <div id=”someId”> <select aria-labelledby=”someId”> <option>someOption</option> </select> </div> ```",
+        "needsHtml": false
+     },
+    "server-side-image-map": {
+        "prompt": "Given a server-side image map, give me an example of a client-side image map that has an <img> element and with the usemap attribute to a map element that is accessible.",
+        "needsHtml": false
+    },
+    "svg-img-alt": {
+        "prompt": "Ways to make the SVG elements more accessible to the screen readers? ```<svg role=\"img\"> <circle cx=\"some-x\" cy=\"some-y\" r=\"some-r\" fill=\"some-fill\" ></circle> </svg>```",
+        "needsHtml": false
+    },
+    "td-headers-attr": {
+        "prompt": "Provide an example of a table that each cell in a table that uses the headers attribute to refer only to other cells in that table.",
+        "needsHtml": false
+    },
+    "th-has-data-cells": {
+        "prompt": "Provide an example of an accessible table where the <th> elements and elements with role=columnheader/row header have data cells they describe",
+        "needsHtml": false
+    },
+    "valid-lang": {
+        "prompt": "What are valid values for the lang attribute?",
+        "needsHtml": false
+    },
+    "video-caption": {
+        "prompt": "Give an example of a video with the track element, and other attributes which ensure that the video element is accessible.",
+        "needsHtml": false
+    },
+    "autocomplete-valid": {
+        "prompt": "Give code example for providing appropriate autocomplete attribute values in HTML form fields",
+        "needsHtml": false
+    },
+    "avoid-inline-spacing": {
+        "prompt": "Fix code snipept such that the style attribute does not have forced line-height,letter-spacing and word-spacing property to ensure inline text spacing is adjustable with custom stylesheets ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "accesskeys": {
+        "prompt": "Fix code to ensure all accesskey values are unique. ```<a href=\"some-href\" accesskey=\"g\">some-text</a> <a href=\"some-href\" accesskey=\"g\">some-text</a>```",
+        "needsHtml": false
+    },
+    "aria-allowed-role": {
+        "prompt": "Fix the code with invalid element role ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "aria-dialog-name": {
+        "prompt": "Fix code to ensure that each element with role=\"dialog\" or role=\"alertdialog\" has aria-label attribute or aria-labelledby ```<div role=\"dialog\" id=\"some-id\"></div>```",
+        "needsHtml": false
+    },
+    "aria-text": {
+        "prompt": "Fix code to ensure that role=\"text\" attribute is only put on an element with no focusable descendants.<span role=\"text\"> <a href=\"/site.html\">Not announced as link</a> </span>",
+        "needsHtml": false
+    },
+    "aria-treeitem-name": {
+        "prompt": "Fix code to ensure that each element with role=\"treeitem” has aria-label attribute or aria-labelledby ```<div role=\"treeitem\" id=\"some-id\"></div>```",
+        "needsHtml": false
+    },
+    "empty-heading": {
+        "prompt": "Fix code so that headings are not empty and are accessible by screen readers ```<h1 aria-hidden=\"true\"></h1>```",
+        "needsHtml": false
+    },
+    "empty-table-header": {
+        "prompt": "Fix code so that table headings are not empty ```<table><tr><th aria-label=\"some-label\"></th></table>```",
+        "needsHtml": false
+    },
+    "heading-order": {
+        "prompt": "Give code example where h1 through h6 element tags appear in a sequentially-descending order.",
+        "needsHtml": false
+    },
+    "image-redundant-alt": {
+        "prompt": "Give code examples where the alternative text of images are repeated in the text and provide a solution.",
+        "needsHtml": false
+    },
+    "label-title-only": {
+        "prompt": "Give examples to ensure every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+        "needsHtml": false
+    },
+    "landmark-banner-is-top-level": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-complementary-is-top-level": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-contentinfo-is-top-level": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-main-is-top-level": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-no-duplicate-banner": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-no-duplicate-contentinfo": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-no-duplicate-main": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-one-main": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "landmark-unique": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements. Explain why landmarks should be unique.",
+        "needsHtml": false
+    },
+    "meta-viewport-large": {
+        "prompt": "Ensure the meta element does not disable text scaling and zooming (omit user-scalable attribute if present). Add any other thing to make it more accessible.",
+        "needsHtml": false
+    },
+    "presentation-role-conflict": {
+        "prompt": "Provide examples of elements marked as presentational having ARIA or tabindex attributes and the correct snippets to fix it",
+        "needsHtml": false
+    },
+    "region": {
+        "prompt": "Provide an example code snippet of HTML with designated landmark elements.",
+        "needsHtml": false
+    },
+    "scope-attr-valid": {
+        "prompt": "Provide an example of a table with the correct usage of the scope attribute. Add any other elements or attributes to make it accessible. What are the possible values for the scope attribute?",
+        "needsHtml": false
+    },
+    "skip-link": {
+        "prompt": "Give me an example HTML and CSS of a skip link navigation that is focusable and at the top right after the opening body tag.",
+        "needsHtml": false
+    },
+    "tabindex": {
+        "prompt": "What is inaccessible about this ${htmlSnippet}",
+        "needsHtml": true
+    },
+    "table-duplicate-name": {
+        "prompt": "Given a table, what are ways to ensure that the caption does not contain the same text? ``` <table> <caption>some text</caption> <tr><th>Data</th></tr> <caption>some text</caption> <tr><td>Data</td></tr> </table> ```",
+        "needsHtml": "FALSE"
+    }
+}
