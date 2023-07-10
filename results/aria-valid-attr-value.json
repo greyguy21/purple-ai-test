@@ -2,5 +2,6 @@
   "li_aria-controls_aria-selected_data-analytics-click-id_data-analytics-section_data-analytics-text_role": "<li aria-controls=\"mmid-cpf-overview\" aria-selected=\"true\" data-analytics-click-id=\"GlobalHeaderL2Link\" data-analytics-section=\"Global Header\" data-analytics-text=\"CPF overview\" role=\"tab\">",
   "div_aria-labelledby_data-guide-parent-id_role": "<div aria-labelledby=\"guideContainer-rootPanel-coverPanel-coverPage_guide-item-nav\" data-guide-parent-id=\"guideContainer-rootPanel-coverPanel\" role=\"tabpanel\">",
   "div_aria-describedby_aria-hidden_data-slick-index_role_style_tabindex": "<div aria-describedby=\"slick-slide-control00\" aria-hidden=\"false\" data-slick-index=\"0\" role=\"tabpanel\" style=\"width: 397px;\" tabindex=\"0\">",
-  "button_aria-controls_aria-label_aria-selected_role_tabindex_type": "<button aria-controls=\"slick-slide1\" aria-label=\"...\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\"></button>\n\n(Note: I removed the \"undefined\" value from the aria-controls attribute.)"
+  "button_aria-controls_aria-label_aria-selected_role_tabindex_type": "<button aria-controls=\"slick-slide1\" aria-label=\"...\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\"></button>\n\n(Note: I removed the \"undefined\" value from the aria-controls attribute.)",
+  "a_aria-labelledby_data-network_href_i_alt": "<a aria-labelledby=\"...\" data-network=\"social\" href=\"...\"><i aria-hidden=\"true\" role=\"img\" alt=\"Facebook\"></i></a>"
 }
