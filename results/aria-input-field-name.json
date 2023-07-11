@@ -1,1 +1,4 @@
-{ "div_role": "<div role=\"listbox\" aria-label=\"Select an option\">" }
+{
+  "div_role": "<div role=\"listbox\" aria-label=\"Select an option\">",
+  "div_role_style": "<div role=\"listbox\" aria-label=\"Select an option\" style=\"opacity: 1; width: 10730px; left: -870px;\">"
+}
