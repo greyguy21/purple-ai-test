@@ -22,7 +22,8 @@ const retrieveCatalogData = async () => {
     //`https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/results/aria-allowed-attr.json`,
     `https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/catalog_test.json`,
     )
-    .then(async response => {
+    .then(async response => {            
+        console.log("Json string from AI")
         if (response.status === 404) {
             console.log("Error getting catalog data")
         }
