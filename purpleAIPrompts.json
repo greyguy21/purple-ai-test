@@ -148,7 +148,7 @@
         "needsHtml": false
     },
     "marquee": {
-        "prompt": "Suggest an alternative to the marquee element ${htmlElement}",
+        "prompt": "Suggest an alternative to the marquee element ${htmlSnippet}",
         "needsHtml": true
     },
     "meta-refresh": {
