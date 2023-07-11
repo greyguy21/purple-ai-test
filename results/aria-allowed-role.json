@@ -5,5 +5,14 @@
   "form_role": "<`form`>",
   "form_data-toggle_role": "<form data-toggle=\"validator\" role=\"form\">",
   "img_alt_role": "<img alt=\"\" aria-hidden=\"true\" role=\"img\">",
-  "a_aria-label_href_role_title": "There are a few issues with the code provided:\n\n1. The opening and closing angle brackets are not included in the code snippet, so it's unclear where they should be placed.\n2. The `a` element is missing its content.\n3. The `role` attribute should not be set to \"listitem\" on an `a` element.\n\nHere's a corrected version of the code:\n\n```\n<a href=\"...\" role=\"link\" aria-label=\"...\" title=\"...\">Link Text</a>\n```\n\nIn this version, we've added the opening and closing angle brackets, included some content (\"Link Text\"), and changed the `role` attribute to \"link\" since that's the appropriate role for an `a` element. We've also left the `aria-label` and `title` attributes as they were, assuming they were correctly set up."
+  "a_aria-label_href_role_title": "There are a few issues with the code provided:\n\n1. The opening and closing angle brackets are not included in the code snippet, so it's unclear where they should be placed.\n2. The `a` element is missing its content.\n3. The `role` attribute should not be set to \"listitem\" on an `a` element.\n\nHere's a corrected version of the code:\n\n```\n<a href=\"...\" role=\"link\" aria-label=\"...\" title=\"...\">Link Text</a>\n```\n\nIn this version, we've added the opening and closing angle brackets, included some content (\"Link Text\"), and changed the `role` attribute to \"link\" since that's the appropriate role for an `a` element. We've also left the `aria-label` and `title` attributes as they were, assuming they were correctly set up.",
+  "video_aria-label_role": "<video aria-label=\"...\" role=\"presentation\"> </video>\n\nExplanation: \n- The `role` attribute should be set to \"presentation\" instead of \"img\" because the element is a video, not an image.\n- The `aria-label` attribute can be used to provide a descriptive label for the video.",
+  "input_aria-controls_aria-label_aria-selected_name_role_type_value": "There is no issue with the code provided. It is a valid `input` element with appropriate ARIA attributes.",
+  "picture_role": "<picture role=\"none\">\n  <source srcset=\"image.webp\" type=\"image/webp\">\n  <img src=\"image.jpg\" alt=\"Image\" role=\"presentation\">\n</picture>",
+  "li_aria-labelledby_role_style": "<li aria-labelledby=\"...\" role=\"tabpanel\" style=\"z-index: 2; opacity: 0; transform: translate(0px, 0px);\"></li>",
+  "li_aria-hidden_aria-labelledby_role_style": "<li aria-hidden=\"true\" aria-labelledby=\"...\" role=\"presentation\" style=\"z-index: 0; opacity: 0; transform: translate(0px, 0px);\">",
+  "video_role": "<video role=\"presentation\"> </video>",
+  "h3_aria-label_role_span": "<h3 aria-label=\"...\" role=\"heading\"><span></span></h3>",
+  "label_for_role": "<label for=\"localnav-disclosure\" role=\"button\" aria-expanded=\"false\">",
+  "ul_aria-label_role": "<ul aria-label=\"...\" role=\"navigation\">"
 }

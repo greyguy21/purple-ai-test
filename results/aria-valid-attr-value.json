@@ -4,5 +4,8 @@
   "div_aria-describedby_aria-hidden_data-slick-index_role_style_tabindex": "<div aria-describedby=\"slick-slide-control00\" aria-hidden=\"false\" data-slick-index=\"0\" role=\"tabpanel\" style=\"width: 397px;\" tabindex=\"0\">",
   "button_aria-controls_aria-label_aria-selected_role_tabindex_type": "<button aria-controls=\"slick-slide1\" aria-label=\"...\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\"></button>\n\n(Note: I removed the \"undefined\" value from the aria-controls attribute.)",
   "a_aria-labelledby_data-network_href_i_alt": "<a aria-labelledby=\"...\" data-network=\"social\" href=\"...\"><i aria-hidden=\"true\" role=\"img\" alt=\"Facebook\"></i></a>",
-  "div_aria-expanded_aria-haspopup_aria-labelledby_role": "<div aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"...\" role=\"combobox\">"
+  "div_aria-expanded_aria-haspopup_aria-labelledby_role": "<div aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"...\" role=\"combobox\">",
+  "button_aria-controls_aria-selected_role_tabindex_type": "<button aria-controls=\"panel-2df06d50-1fbf-11ee-997b-cfe06caab37e-0\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\">",
+  "input_aria-autocomplete_aria-describedby_aria-expanded_aria-invalid_aria-labelledby_aria-owns_name_role_type_value": "<input aria-autocomplete=\"list\" aria-describedby=\"2df01f30-1fbf-11ee-997b-cfe06caab37e_error\" aria-expanded=\"false\" aria-invalid=\"true\" aria-labelledby=\"...\" aria-owns=\"2df01f30-1fbf-11ee-997b-cfe06caab37e_listbox\" name=\"...\" role=\"combobox\" type=\"text\" value=\"...\"> \n\nThe `aria-invalid` attribute should have a value of \"true\" or \"false\" to indicate whether the input is valid or not. In this case, it should be set to \"true\" since the `aria-describedby` attribute references an error message.",
+  "span_aria-hidden": "<span aria-hidden=\"true\"></span>"
 }
