@@ -2,12 +2,11 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { JWT } = require('google-auth-library');
 const { config } = require("dotenv");
 const fs = require('fs');
-const GitHub = require('github-api');
+// const GitHub = require('github-api');
 const axios = require('axios');
 const prettier = require('prettier');
 const utils = require('./utils');
 const { execSync } = require('child_process');
-// const { silentLogger } = require('./logs');
 
 const range = require('../range.json'); 
 const prompts = require('../purpleAIPrompts.json');
@@ -22,10 +21,10 @@ const serviceAccountAuth = new JWT({
     ]
 })
 
-const github = new GitHub({
-    token: process.env.GITHUB_TOKEN
-});
-const repo = github.getRepo('greyguy21', 'purple-ai-test');
+// const github = new GitHub({
+//     token: process.env.GITHUB_TOKEN
+// });
+// const repo = github.getRepo('greyguy21', 'purple-ai-test');
 
 const HEADERS = {
     "Content-Type": "application/json",
@@ -49,8 +48,8 @@ const getDataFromGoogleSheets = async () => {
     console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
-    // const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
-    const rows = await formReponses.getRows();
+    const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    // const rows = await formReponses.getRows();
     return rows; 
 }
 
@@ -97,7 +96,7 @@ const generateAIResponses = async (issues) => {
         console.log(i.issueID);
         let prompt;
         if (prompts[i.issueID].needsHtml) {
-            if (await utils.needsQueryForHTML(i.issueID, i.htmlSnippet, i.basicHTMLLabel, repo)) {
+            if (await utils.needsQueryForHTML(i.issueID, i.htmlSnippet, i.basicHTMLLabel)) {
                 const htmlSnippet = i.promptHTMLSnippet;
                 prompt = eval('`' + prompts[i.issueID].prompt + '`');
             } else {
@@ -135,25 +134,17 @@ const generateAIResponses = async (issues) => {
 }
 
 const writeResultsToGithub = async (updatedIssues) => {
-    // await repo.writeFile('main', `range.json`, JSON.stringify(range), `Update range.json`, {}, (err, result, response) => {})
-    if (updatedIssues.length > 0) {
-        execSync('git add results');
+    if (updatedIssues.size > 0) {
         let commitMessage = 'Add '; 
         for (const issue of updatedIssues) {
-            commitMessage += `${issue} `; 
+            commitMessage += `${issue}.json `; 
         }
         console.log(commitMessage);
-        // execSync(`git commit -m "${commitMessage}"`)    
+        execSync(`git pull && git add results && git commit -m "${commitMessage}"`)  
     }
-    let commitMessage = 'Add results'; 
-    console.log(commitMessage);
-    execSync(`git add results && git commit -m "${commitMessage}" && git push`)  
-
-    // for (const issue of updatedIssues) {
-    //     // await repo.writeFile('main', `results/${issue}.json`, fs.readFileSync(`./updated/${issue}.json`), `Add ${issue}.json`, {}, () => {})
-    // }
-    // fs.rmSync('./updated', { recursive: true });
-}
+    execSync(`git pull && git add range.json && git commit -m "Update range.json"`)
+    execSync(`git push`)
+ }
 
 const run = async () => {
     if (!fs.existsSync('../results')) {

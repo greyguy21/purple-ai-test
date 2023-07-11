@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 const omittedRules = ['html-xml-lang-mismatch', 'frame-tested', 'color-contrast', 'link-in-text-block', 'page-has-heading-one'];
 const deprecatedRules = ['aria-roledescription', 'audio-caption', 'duplicate-id-active', 'duplicate-id'];
