@@ -39,6 +39,8 @@ ruleIdsWithHtml.forEach((ruleId) => {
         outputJson[ruleId].push(key);
       }
     });
+  } else {
+    outputJson[ruleId] = [];
   }
 });
 
