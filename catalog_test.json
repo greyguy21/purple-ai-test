@@ -1,0 +1,13 @@
+{
+	"aria-hidden-focus": ["div_aria-hidden", "div_aria-hidden_data-slice-index_style_tabindex_div"],
+	"aria-input-field-name": [],
+	"aria-roles": [],
+	"aria-toggle-field-name": [],
+	"aria-valid-attr-value": [],
+	"aria-valid-attr": [],
+	"marquee": [],
+	"nested-interactive": [],
+	"avoid-inline-spacing": [],
+	"aria-allowed-role": [],
+	"tabindex": []
+}
