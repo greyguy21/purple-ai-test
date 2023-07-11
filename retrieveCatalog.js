@@ -15,6 +15,8 @@
 
 // app.listen(port, () => console.log(`Listening on port ${port}`));
 
+console.log("retrieve catalog")
+
 let data
 const retrieveCatalogData = async () => {
     // fetch from github
