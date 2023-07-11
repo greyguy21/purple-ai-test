@@ -22,7 +22,12 @@ const retrieveCatalogData = async () => {
     // fetch from github
     await fetch(
     //`https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/results/aria-allowed-attr.json`,
-    `https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/catalog_test.json`,
+    `https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/catalog_test.json`,{
+        headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    }  
     )
     .then(async response => {            
         console.log("Json string from AI")
