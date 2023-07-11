@@ -6,11 +6,11 @@ const GitHub = require('github-api');
 const axios = require('axios');
 const prettier = require('prettier');
 const utils = require('./utils');
+const { execSync } = require('child_process');
 // const { silentLogger } = require('./logs');
 
 const range = require('../range.json'); 
 const prompts = require('../purpleAIPrompts.json');
-const { execSync } = require('child_process');
 
 config(); 
 
@@ -49,7 +49,8 @@ const getDataFromGoogleSheets = async () => {
     console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
-    const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    // const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    const rows = await formReponses.getRows();
     return rows; 
 }
 
@@ -117,7 +118,7 @@ const generateAIResponses = async (issues) => {
         console.log(result)
         const answer = result.status === 200 ? result.answer : null;
         if (answer) {
-            const resultPath = `./updated/${i.issueID}.json`; 
+            const resultPath = `./results/${i.issueID}.json`; 
             var data = {}; 
             if (fs.existsSync(resultPath)) {
                 data = JSON.parse(fs.readFileSync(resultPath));
@@ -135,12 +136,23 @@ const generateAIResponses = async (issues) => {
 
 const writeResultsToGithub = async (updatedIssues) => {
     // await repo.writeFile('main', `range.json`, JSON.stringify(range), `Update range.json`, {}, (err, result, response) => {})
-    console.log(updatedIssues);
-    for (const issue of updatedIssues) {
-        await repo.writeFile('main', `results/${issue}.json`, fs.readFileSync(`./updated/${issue}.json`), `Add ${issue}.json`, {}, () => {})
-        // execSync('git add ./results&&')
+    if (updatedIssues.length > 0) {
+        execSync('git add results');
+        let commitMessage = 'Add '; 
+        for (const issue of updatedIssues) {
+            commitMessage += `${issue} `; 
+        }
+        console.log(commitMessage);
+        // execSync(`git commit -m "${commitMessage}"`)    
     }
-    fs.rmSync('./updated', { recursive: true });
+    let commitMessage = 'Add results'; 
+    console.log(commitMessage);
+    execSync(`git add results && git commit -m "${commitMessage}" && git push`)  
+
+    // for (const issue of updatedIssues) {
+    //     // await repo.writeFile('main', `results/${issue}.json`, fs.readFileSync(`./updated/${issue}.json`), `Add ${issue}.json`, {}, () => {})
+    // }
+    // fs.rmSync('./updated', { recursive: true });
 }
 
 const run = async () => {
