@@ -1,5 +1,5 @@
 let data
-const retrieveCatalogData () => {
+const retrieveCatalogData = async () => {
     // fetch from github
     await fetch(
     //`https://raw.githubusercontent.com/greyguy21/purple-ai-test/main/results/aria-allowed-attr.json`,
@@ -19,3 +19,4 @@ const retrieveCatalogData () => {
         }
     })
 }
+
