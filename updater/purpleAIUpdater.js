@@ -151,6 +151,7 @@ const run = async () => {
         fs.mkdirSync('../results');
     }
 
+    console.log("enter");
     const data = await getDataFromGoogleSheets(); 
     const issues = await generateIssuesToQuery(data);
     const updatedIssues = await generateAIResponses(issues);
