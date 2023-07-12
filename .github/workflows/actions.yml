@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: npm ci 
       - name: Configure github credentials 
-        run: 
+        run: |
           git config --local user.email "e0559779@u.nus.edu"
           git config --local user.name "greyguy21"
       - name: Run Purple AI Updater script 
