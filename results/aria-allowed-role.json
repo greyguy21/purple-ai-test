@@ -14,5 +14,6 @@
   "video_role": "<video role=\"presentation\"> </video>",
   "h3_aria-label_role_span": "<h3 aria-label=\"...\" role=\"heading\"><span></span></h3>",
   "label_for_role": "<label for=\"localnav-disclosure\" role=\"button\" aria-expanded=\"false\">",
-  "ul_aria-label_role": "<ul aria-label=\"...\" role=\"navigation\">"
+  "ul_aria-label_role": "<ul aria-label=\"...\" role=\"navigation\">",
+  "li_aria-hidden_aria-label_aria-roledescription_role_style": "<li aria-hidden=\"false\" aria-label=\"...\" aria-roledescription=\"slide\" role=\"listitem\" style=\"display: block; position: relative; width: 93.1535%; left: 0%; right: auto; top: 0px; opacity: 1; transition-property: transform, visibility; transition-duration: 0ms, 0ms; transition-delay: 0ms, 0ms; visibility: visible; transform: translate3d(0%, 0px, 0px);\"> </li>"
 }
