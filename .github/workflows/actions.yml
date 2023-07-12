@@ -23,4 +23,12 @@ jobs:
           echo GOOGLE_PRIVATE_KEY"=${{ secrets.GOOGLE_PRIVATE_KEY }} >> .env
           echo GOOGLE_SHEET_ID"=${{ secrets.GOOGLE_SHEET_ID }} >> .env
       - name: Run Purple AI Updater script 
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_ENDPOINT: ${{ secrets.OPENAI_API_ENDPOINT }}
+          OPENAI_FLOW_ID: ${{ secrets.OPENAI_FLOW_ID }}
+          SCOPE: ${{ secrets.SCOPE }}
+          GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
         run: node updater/purpleAIUpdater.js 
