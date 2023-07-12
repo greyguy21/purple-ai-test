@@ -10,5 +10,10 @@
   "span_aria-hidden": "<span aria-hidden=\"true\"></span>",
   "ul_aria-live_style": "<ul aria-live=\"polite\" style=\"z-index: 1; position: relative; overflow: hidden;\">",
   "ol_aria-live_style": "<ol aria-live=\"polite\" style=\"z-index: 1; position: relative; overflow: hidden;\">",
-  "span_aria-labelledby_role": "<span aria-labelledby=\"label1 label2\" role=\"region\">"
+  "span_aria-labelledby_role": "<span aria-labelledby=\"label1 label2\" role=\"region\">",
+  "li_aria-controls_role_style": "<li aria-controls=\"tabs-testimonials_wrap_tab_item-0\" role=\"tab\" style=\"background-color: #fff; border-color: #c1c1c1;\"></li>",
+  "div_aria-labelledby_style": "<div aria-labelledby=\"label1\" style=\"display:block\"> \n<!-- Replace \"...\" with the ID of the element that serves as the label for this div -->",
+  "div_aria-labelledby": "<div aria-labelledby=\"label-id\">",
+  "video_aria-describedby_aria-labelledby_src": "<video aria-describedby=\"VideoInfo-1\" aria-labelledby=\"VideoTitle-1\" src=\"...\"> \n\n(Note: The `aria-labelledby` attribute should reference the ID of an element that contains the title of the video, not \"...\" as shown in the original code.)",
+  "div_aria-live": "<div aria-live=\"assertive\">"
 }
