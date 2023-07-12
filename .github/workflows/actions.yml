@@ -13,6 +13,10 @@ jobs:
       - run: env
       - name: Install dependencies
         run: npm ci 
+      - name: Configure github credentials 
+        run: 
+          git config user.email "e0559779@u.nus.edu"
+          git config user.name "greyguy21"
       - name: Run Purple AI Updater script 
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
