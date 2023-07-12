@@ -151,7 +151,8 @@ const run = async () => {
         fs.mkdirSync('../results');
     }
 
-    console.log("enter");
+    console.log(process.env);
+    console.log(process.env.GOOGLE_PRIVATE_KEY);
     const data = await getDataFromGoogleSheets(); 
     const issues = await generateIssuesToQuery(data);
     const updatedIssues = await generateAIResponses(issues);
