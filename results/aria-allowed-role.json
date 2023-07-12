@@ -16,5 +16,7 @@
   "label_for_role": "<label for=\"localnav-disclosure\" role=\"button\" aria-expanded=\"false\">",
   "ul_aria-label_role": "<ul aria-label=\"...\" role=\"navigation\">",
   "li_aria-hidden_aria-label_aria-roledescription_role_style": "<li aria-hidden=\"false\" aria-label=\"...\" aria-roledescription=\"slide\" role=\"listitem\" style=\"display: block; position: relative; width: 93.1535%; left: 0%; right: auto; top: 0px; opacity: 1; transition-property: transform, visibility; transition-duration: 0ms, 0ms; transition-delay: 0ms, 0ms; visibility: visible; transform: translate3d(0%, 0px, 0px);\"> </li>",
-  "a_aria-label_aria-orientation_aria-valuemax_aria-valuemin_href_role": "<a aria-label=\"...\" aria-orientation=\"vertical\" aria-valuemax=\"100\" aria-valuemin=\"0\" href=\"...\" role=\"slider\"></a>"
+  "a_aria-label_aria-orientation_aria-valuemax_aria-valuemin_href_role": "<a aria-label=\"...\" aria-orientation=\"vertical\" aria-valuemax=\"100\" aria-valuemin=\"0\" href=\"...\" role=\"slider\"></a>",
+  "ul_role": "<ul role=\"tablist\" aria-label=\"Tab List\">\n  <li role=\"tab\" aria-selected=\"true\">Tab 1</li>\n  <li role=\"tab\" aria-selected=\"false\">Tab 2</li>\n  <li role=\"tab\" aria-selected=\"false\">Tab 3</li>\n</ul>\n<div role=\"tabpanel\" aria-labelledby=\"tab1\">\n  <p>Content for Tab 1 goes here.</p>\n</div>\n<div role=\"tabpanel\" aria-labelledby=\"tab2\">\n  <p>Content for Tab 2 goes here.</p>\n</div>\n<div role=\"tabpanel\" aria-labelledby=\"tab3\">\n  <p>Content for Tab 3 goes here.</p>\n</div>",
+  "li_role": "<li role=\"tablist\"> </li>"
 }

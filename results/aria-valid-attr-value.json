@@ -15,5 +15,7 @@
   "div_aria-labelledby_style": "<div aria-labelledby=\"label1\" style=\"display:block\"> \n<!-- Replace \"...\" with the ID of the element that serves as the label for this div -->",
   "div_aria-labelledby": "<div aria-labelledby=\"label-id\">",
   "video_aria-describedby_aria-labelledby_src": "<video aria-describedby=\"VideoInfo-1\" aria-labelledby=\"VideoTitle-1\" src=\"...\"> \n\n(Note: The `aria-labelledby` attribute should reference the ID of an element that contains the title of the video, not \"...\" as shown in the original code.)",
-  "div_aria-live": "<div aria-live=\"assertive\">"
+  "div_aria-live": "<div aria-live=\"assertive\">",
+  "a_aria-controls_aria-expanded_href_role": "<a aria-controls=\"service-collapse\" aria-expanded=\"true\" href=\"...\" role=\"button\">",
+  "div_aria-labelledby_role": "<div aria-labelledby=\"some-id\" role=\"tabpanel\">"
 }
