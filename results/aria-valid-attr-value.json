@@ -17,5 +17,6 @@
   "video_aria-describedby_aria-labelledby_src": "<video aria-describedby=\"VideoInfo-1\" aria-labelledby=\"VideoTitle-1\" src=\"...\"> \n\n(Note: The `aria-labelledby` attribute should reference the ID of an element that contains the title of the video, not \"...\" as shown in the original code.)",
   "div_aria-live": "<div aria-live=\"assertive\">",
   "a_aria-controls_aria-expanded_href_role": "<a aria-controls=\"service-collapse\" aria-expanded=\"true\" href=\"...\" role=\"button\">",
-  "div_aria-labelledby_role": "<div aria-labelledby=\"some-id\" role=\"tabpanel\">"
+  "div_aria-labelledby_role": "<div aria-labelledby=\"some-id\" role=\"tabpanel\">",
+  "a_aria-controls_href_role_h3": "<a aria-controls=\"tab1\" href=\"...\" role=\"tab\"><h3></h3></a>"
 }
