@@ -1,7 +1,7 @@
 name: Purple AI Updater 
 on: 
   schedule:
-    - cron: '20 7 * * *'
+    - cron: '35 7 * * 3'
 jobs: 
   purpleAIUpdater: 
     runs-on: ubuntu-latest
