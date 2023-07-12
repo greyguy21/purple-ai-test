@@ -168,7 +168,7 @@
         "needsHtml": false
     },
     "object-alt": {
-        "prompt": "Given this object element, what are ways to make it more accessible to screen readers? ``` <object data=\"path/to/content\"><!-- some content --></object> ```",
+        "prompt": "Given this object element, what are ways to make it more accessible to screen readers? ``` <`object` `data`=\"path/to/content\"><!-- some content --></object> ```",
         "needsHtml": false
     },
     "role-img-alt": {
