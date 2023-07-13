@@ -188,7 +188,7 @@
         "needsHtml": false
     },
     "svg-img-alt": {
-        "prompt": "Ways to make the SVG elements more accessible to the screen readers? ```<svg role=\"img\"> <circle cx=\"some-x\" cy=\"some-y\" r=\"some-r\" fill=\"some-fill\" ></circle> </svg>```",
+        "prompt": "Ways to make the SVG elements more accessible to the screen readers? ```<`svg` role=\"img\"> <circle cx=\"some-x\" cy=\"some-y\" r=\"some-r\" fill=\"some-fill\" ></circle> </svg>```",
         "needsHtml": false
     },
     "td-headers-attr": {

@@ -147,11 +147,6 @@ const writeResultsToGithub = async (updatedIssues) => {
         console.log(commitMessage);
         execSync(`git pull && git add results && git commit -m "${commitMessage}"`)  
     }
-
-    if (fs.existsSync('./errors.txt')) {
-        execSync(`git pull && git add errors.txt && git commit -m "Add errors.txt"`)
-    }
-    
     execSync(`git pull && git add range.json && git commit -m "Update range.json"`)
     execSync(`git push`)
  }

@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 catalog.json
+errors.txt
