@@ -27,7 +27,9 @@ jobs:
           GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
-        run: node updater/purpleAIUpdater.js 
+        run: |
+          node updater/purpleAIUpdater.js 
+          node generateCatalog.js
       - name: Upload Artifact 
         uses: actions/upload-artifact@v3
         with: 
