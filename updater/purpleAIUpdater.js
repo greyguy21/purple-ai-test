@@ -7,6 +7,7 @@ const axios = require('axios');
 const prettier = require('prettier');
 const utils = require('./utils');
 const { execSync } = require('child_process');
+const { silentLogger } = require('./logs'); 
 
 const range = require('../range.json'); 
 const prompts = require('../purpleAIPrompts.json');
@@ -36,8 +37,8 @@ const query = async (payload) => {
       const response = await axios.post(process.env.OPENAI_API_ENDPOINT, payload, { headers: HEADERS });
       return { status: response.status, answer: response.data.data[0].llm_response.content };
     } catch (error) {
-      console.error("Error in prompt: ", error.response);
-    //   silentLogger.error(error);
+      const errorMessage = `${error}: ${error.response.config.data}`
+      silentLogger.error(errorMessage);
       return { status: error.response.status }
     }
 }
@@ -48,14 +49,15 @@ const getDataFromGoogleSheets = async () => {
     console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
-    const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
-    // const rows = await formReponses.getRows();
+    // const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    const rows = await formReponses.getRows();
     return rows; 
 }
 
 const generateIssuesToQuery = async (data) => {
     var issues = [];
     for (const d of data) {
+       try {
         const results = JSON.parse(d.get('Accessibility Scan Results'));
         const website = d.get('Website URL');
         console.log(website)
@@ -63,7 +65,6 @@ const generateIssuesToQuery = async (data) => {
             if (utils.omittedRules.includes(ruleID) || utils.deprecatedRules.includes(ruleID)) {
                 continue;
             }
-            console.log(ruleID)
             if (prompts[ruleID].needsHtml) {
                 const snippets = results[ruleID].snippets; 
                 for (const snippet of snippets) {
@@ -84,8 +85,12 @@ const generateIssuesToQuery = async (data) => {
                 }
             }
         }
+       } catch (e) {
+        const errorMessage = `${e}: ${d['_rawData']}`
+        silentLogger.error(errorMessage);
+       }
     }
-    utils.updateRowRange(data, range);
+    // utils.updateRowRange(data, range);
     console.log(issues);
     return issues; 
 }
@@ -152,9 +157,12 @@ const run = async () => {
     }
     
     const data = await getDataFromGoogleSheets(); 
-    const issues = await generateIssuesToQuery(data);
-    const updatedIssues = await generateAIResponses(issues);
-    await writeResultsToGithub(updatedIssues)
+    if (data.length > 0) {
+        const issues = await generateIssuesToQuery(data);
+        const updatedIssues = await generateAIResponses(issues);
+        console.log(updatedIssues);
+        await writeResultsToGithub(updatedIssues)
+    }
 }
 
 run();
