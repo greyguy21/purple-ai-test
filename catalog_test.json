@@ -1,6 +1,6 @@
 {
 	"aria-hidden-focus": ["div_aria-hidden", "div_aria-hidden_data-slice-index_style_tabindex_div"],
-	"aria-input-field-name": [],
+	"aria-input-field-name": ["div_class_role"],
 	"aria-roles": [],
 	"aria-toggle-field-name": [],
 	"aria-valid-attr-value": [],
