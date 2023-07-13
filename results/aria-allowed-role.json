@@ -21,5 +21,7 @@
   "li_role": "<li role=\"tablist\"> </li>",
   "label_role_title": "<label role=\"radio\" aria-checked=\"false\" title=\"...\"> </label>",
   "section_role": "<section role=\"menubar\">",
-  "iframe_aria-label_name_role_style_tabindex_title": "<iframe aria-label=\"...\" name=\"...\" role=\"region\" style=\"border: 0px; vertical-align: bottom;\" tabindex=\"0\" title=\"...\"></iframe>"
+  "iframe_aria-label_name_role_style_tabindex_title": "<iframe aria-label=\"...\" name=\"...\" role=\"region\" style=\"border: 0px; vertical-align: bottom;\" tabindex=\"0\" title=\"...\"></iframe>",
+  "a_href_role": "<a href=\"...\" role=\"listitem\">Link text</a>",
+  "input_aria-expanded_aria-label_role_type": "<input aria-expanded=\"false\" aria-label=\"...\" role=\"checkbox\" type=\"checkbox\"> \n\nExplanation: \n- The `role` attribute should be set to \"checkbox\" instead of \"button\" because the element is a checkbox.\n- The `aria-expanded` attribute is not necessary for a checkbox, so it can be removed."
 }
