@@ -1,7 +1,5 @@
 name: Purple AI Updater 
-on: 
-  schedule: 
-  - cron: '15 4 * * *'
+on: workflow_dispatch
 jobs: 
   purpleAIUpdater: 
     runs-on: ubuntu-latest
