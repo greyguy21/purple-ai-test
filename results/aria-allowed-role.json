@@ -19,5 +19,7 @@
   "a_aria-label_aria-orientation_aria-valuemax_aria-valuemin_href_role": "<a aria-label=\"...\" aria-orientation=\"vertical\" aria-valuemax=\"100\" aria-valuemin=\"0\" href=\"...\" role=\"slider\"></a>",
   "ul_role": "<ul role=\"tablist\" aria-label=\"Tab List\">\n  <li role=\"tab\" aria-selected=\"true\">Tab 1</li>\n  <li role=\"tab\" aria-selected=\"false\">Tab 2</li>\n  <li role=\"tab\" aria-selected=\"false\">Tab 3</li>\n</ul>\n<div role=\"tabpanel\" aria-labelledby=\"tab1\">\n  <p>Content for Tab 1 goes here.</p>\n</div>\n<div role=\"tabpanel\" aria-labelledby=\"tab2\">\n  <p>Content for Tab 2 goes here.</p>\n</div>\n<div role=\"tabpanel\" aria-labelledby=\"tab3\">\n  <p>Content for Tab 3 goes here.</p>\n</div>",
   "li_role": "<li role=\"tablist\"> </li>",
-  "label_role_title": "<label role=\"radio\" aria-checked=\"false\" title=\"...\"> </label>"
+  "label_role_title": "<label role=\"radio\" aria-checked=\"false\" title=\"...\"> </label>",
+  "section_role": "<section role=\"menubar\">",
+  "iframe_aria-label_name_role_style_tabindex_title": "<iframe aria-label=\"...\" name=\"...\" role=\"region\" style=\"border: 0px; vertical-align: bottom;\" tabindex=\"0\" title=\"...\"></iframe>"
 }
