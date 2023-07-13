@@ -9,5 +9,7 @@
   "div_aria-hidden_span_span_aria-label_role_tabindex": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <span tabindex=\"-1\"></span>\n  <span aria-label=\"...\" role=\"button\"></span>\n</div>",
   "li_aria-hidden_style": "<li aria-hidden=\"true\" style=\"background: url(&quot;https://www.iss.nus.edu.sg/images/default-source/main-banner/web-slider-stackableprog2022.png?Status=Master&amp;sfvrsn=a81bb85f_0&quot;) center top / cover no-repeat; width: 1265px; float: left; display: block;\" tabindex=\"-1\"></li>",
   "div_aria-hidden_style_tabindex": "<div aria-hidden=\"true\" style=\"width: 145px;\" tabindex=\"-1\">",
-  "div_aria-hidden_tabindex": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <!-- content here -->\n</div>"
+  "div_aria-hidden_tabindex": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <!-- content here -->\n</div>",
+  "li_aria-hidden": "<li aria-hidden=\"true\" tabindex=\"-1\" style=\"pointer-events: none;\">",
+  "li_aria-hidden_span_div_p_a_href": "<li aria-hidden=\"true\" tabindex=\"-1\">\n  <span></span>\n  <div>\n    <p>\n      <a href=\"...\" tabindex=\"-1\"></a>\n    </p>\n  </div>\n</li>"
 }
