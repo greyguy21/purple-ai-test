@@ -6,7 +6,7 @@
 	"aria-valid-attr-value": [],
 	"aria-valid-attr": [],
 	"marquee": [],
-	"nested-interactive": ["div_role"],
+	"nested-interactive": ["div_role","li_aria-controls_aria-selected_class_role_data-analytics-click-id_data-analytics-text_data-analytics-section"],
 	"avoid-inline-spacing": [],
 	"aria-allowed-role": [],
 	"tabindex": []
