@@ -19,5 +19,6 @@
   "a_aria-controls_aria-expanded_href_role": "<a aria-controls=\"service-collapse\" aria-expanded=\"true\" href=\"...\" role=\"button\">",
   "div_aria-labelledby_role": "<div aria-labelledby=\"some-id\" role=\"tabpanel\">",
   "a_aria-controls_href_role_h3": "<a aria-controls=\"tab1\" href=\"...\" role=\"tab\"><h3></h3></a>",
-  "ul_aria-labelledby": "<ul aria-labelledby=\"label-id\">"
+  "ul_aria-labelledby": "<ul aria-labelledby=\"label-id\">",
+  "li_aria-describedby_aria-hidden_role_style_tabindex": "<`li` `aria-describedby`=\"slick-slide-00\" `aria-hidden`=\"false\" `role`=\"option\" `style`=\"width: 1280px;\" `tabindex`=\"-1\">"
 }
