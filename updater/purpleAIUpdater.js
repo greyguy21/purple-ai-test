@@ -90,7 +90,7 @@ const generateIssuesToQuery = async (data) => {
         silentLogger.error(errorMessage);
        }
     }
-    // utils.updateRowRange(data, range);
+    utils.updateRowRange(data, range);
     console.log(issues);
     return issues; 
 }
