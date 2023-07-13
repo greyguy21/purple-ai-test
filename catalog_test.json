@@ -6,7 +6,7 @@
 	"aria-valid-attr-value": [],
 	"aria-valid-attr": [],
 	"marquee": [],
-	"nested-interactive": ["div_role"],
+	"nested-interactive": ["div_class"],
 	"avoid-inline-spacing": [],
 	"aria-allowed-role": [],
 	"tabindex": []
