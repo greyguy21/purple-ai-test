@@ -3,7 +3,7 @@
 	"aria-input-field-name": ["div_class_role"],
 	"aria-roles": [],
 	"aria-toggle-field-name": [],
-	"aria-valid-attr-value": [],
+	"aria-valid-attr-value": ["li_aria-controls_aria-selected_data-analytics-click-id_data-analytics-section_data-analytics-text_role","div_aria-labelledby_data-guide-parent-id_role"],
 	"aria-valid-attr": [],
 	"marquee": [],
 	"nested-interactive": ["div_role","li_aria-controls_aria-selected_class_role_data-analytics-click-id_data-analytics-text_data-analytics-section"],
