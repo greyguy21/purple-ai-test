@@ -27,8 +27,6 @@
   "aria-toggle-field-name": [],
   "aria-valid-attr-value": [
     "div_aria-labelledby_data-guide-parent-id_role",
-    "div_aria-describedby_aria-hidden_data-slick-index_role_style_tabindex",
-    "button_aria-controls_aria-label_aria-selected_role_tabindex_type",
     "a_aria-labelledby_data-network_href_i_alt",
     "div_aria-expanded_aria-haspopup_aria-labelledby_role",
     "button_aria-controls_aria-selected_role_tabindex_type",
@@ -45,8 +43,7 @@
     "a_aria-controls_aria-expanded_href_role",
     "div_aria-labelledby_role",
     "a_aria-controls_href_role_h3",
-    "ul_aria-labelledby",
-    "li_aria-describedby_aria-hidden_role_style_tabindex"
+    "ul_aria-labelledby"
   ],
   "aria-valid-attr": [],
   "marquee": [],
@@ -100,5 +97,5 @@
     "button_tabindex_span",
     "input_name_tabindex_type"
   ],
-  "lastUpdated": "7/14/2023, 3:14:46 AM"
+  "lastUpdated": "7/14/2023, 3:30:25 AM"
 }
