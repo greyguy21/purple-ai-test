@@ -43,7 +43,8 @@
     "a_aria-controls_aria-expanded_href_role",
     "div_aria-labelledby_role",
     "a_aria-controls_href_role_h3",
-    "ul_aria-labelledby"
+    "ul_aria-labelledby",
+    "li_aria-describedby_aria-hidden_role_style_tabindex"
   ],
   "aria-valid-attr": [],
   "marquee": [],
@@ -97,5 +98,5 @@
     "button_tabindex_span",
     "input_name_tabindex_type"
   ],
-  "lastUpdated": "7/14/2023, 3:30:25 AM"
+  "lastUpdated": "7/14/2023, 3:36:07 AM"
 }
