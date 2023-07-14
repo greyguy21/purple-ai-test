@@ -1,5 +1,3 @@
 {
   "div_role=\"dialog\"": "test responseeeee",
-  "li_role=\"option\"": "<li aria-describedby=\"slick-slide-00\" aria-hidden=\"false\" role=\"option\" style=\"width: 1280px;\" tabindex=\"0\">",
-  "li_role=\"presentation\"><button": "<li aria-controls=\"navigation-00\" aria-hidden=\"false\" aria-selected=\"true\" role=\"tab\"><button role=\"tab\" tabindex=\"0\" type=\"button\"></button></li>"
 }
