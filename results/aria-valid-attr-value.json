@@ -1,8 +1,6 @@
 {
   "li_aria-controls_aria-selected_data-analytics-click-id_data-analytics-section_data-analytics-text_role": "<li aria-controls=\"mmid-cpf-overview\" aria-selected=\"true\" data-analytics-click-id=\"GlobalHeaderL2Link\" data-analytics-section=\"Global Header\" data-analytics-text=\"CPF overview\" role=\"tab\">",
   "div_aria-labelledby_data-guide-parent-id_role": "<div aria-labelledby=\"guideContainer-rootPanel-coverPanel-coverPage_guide-item-nav\" data-guide-parent-id=\"guideContainer-rootPanel-coverPanel\" role=\"tabpanel\">",
-  "div_aria-describedby_aria-hidden_data-slick-index_role_style_tabindex": "<div aria-describedby=\"slick-slide-control00\" aria-hidden=\"false\" data-slick-index=\"0\" role=\"tabpanel\" style=\"width: 397px;\" tabindex=\"0\">",
-  "button_aria-controls_aria-label_aria-selected_role_tabindex_type": "<button aria-controls=\"slick-slide1\" aria-label=\"...\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\"></button>\n\n(Note: I removed the \"undefined\" value from the aria-controls attribute.)",
   "a_aria-labelledby_data-network_href_i_alt": "<a aria-labelledby=\"...\" data-network=\"social\" href=\"...\"><i aria-hidden=\"true\" role=\"img\" alt=\"Facebook\"></i></a>",
   "div_aria-expanded_aria-haspopup_aria-labelledby_role": "<div aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-labelledby=\"...\" role=\"combobox\">",
   "button_aria-controls_aria-selected_role_tabindex_type": "<button aria-controls=\"panel-2df06d50-1fbf-11ee-997b-cfe06caab37e-0\" aria-selected=\"true\" role=\"tab\" tabindex=\"0\" type=\"button\">",
@@ -19,6 +17,5 @@
   "a_aria-controls_aria-expanded_href_role": "<a aria-controls=\"service-collapse\" aria-expanded=\"true\" href=\"...\" role=\"button\">",
   "div_aria-labelledby_role": "<div aria-labelledby=\"some-id\" role=\"tabpanel\">",
   "a_aria-controls_href_role_h3": "<a aria-controls=\"tab1\" href=\"...\" role=\"tab\"><h3></h3></a>",
-  "ul_aria-labelledby": "<ul aria-labelledby=\"label-id\">",
-  "li_aria-describedby_aria-hidden_role_style_tabindex": "<`li` `aria-describedby`=\"slick-slide-00\" `aria-hidden`=\"false\" `role`=\"option\" `style`=\"width: 1280px;\" `tabindex`=\"-1\">"
+  "ul_aria-labelledby": "<ul aria-labelledby=\"label-id\">"
 }
