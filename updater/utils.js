@@ -5,10 +5,23 @@ const omittedRules = ['html-xml-lang-mismatch', 'frame-tested', 'color-contrast'
 const deprecatedRules = ['aria-roledescription', 'audio-caption', 'duplicate-id-active', 'duplicate-id'];
 
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
-const createBasicHTMLLabel = (html) => {
+const createBasicHTMLLabel = (ruleID, html) => {
+    if (ruleID === "aria-valid-attr-value") {
+        const label = createLabelForAriaValidAttrValue(html);
+        console.log(label);
+        return label;
+    }
     const label = html.match(htmlTagAndAttributeRegex).toString().replaceAll(",", "_");
     return label;
-};
+}; 
+
+const createLabelForAriaValidAttrValue = (html) => {
+    const ariaValidAttrValueHtml = html.replace(/^<|>$/g, "")
+    const ariaValidAttrValueHtmlList = ariaValidAttrValueHtml.split(' ');
+    const roleForHtml = ariaValidAttrValueHtmlList.find(item => /^role="\w+"/.test(item))
+    htmlLabel = `${ariaValidAttrValueHtmlList[0]}_${roleForHtml}`
+    return htmlLabel ? htmlLabel : "";
+}
 
 const processHTMLSnippet = (html) => {
     const processed = html.replace(htmlTagAndAttributeRegex, `\`$&\``);

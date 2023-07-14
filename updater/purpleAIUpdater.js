@@ -68,7 +68,7 @@ const generateIssuesToQuery = async (data) => {
             if (prompts[ruleID].needsHtml) {
                 const snippets = results[ruleID].snippets; 
                 for (const snippet of snippets) {
-                    const basicHTMLLabel = utils.createBasicHTMLLabel(snippet);
+                    const basicHTMLLabel = utils.createBasicHTMLLabel(ruleID, snippet);
                     if (await utils.needsQueryForHTML(ruleID, snippet, basicHTMLLabel)) {
                         const promptHTMLSnippet = utils.processHTMLSnippet(snippet);
                         issues.push({
@@ -160,8 +160,8 @@ const run = async () => {
     if (data.length > 0) {
         const issues = await generateIssuesToQuery(data);
         const updatedIssues = await generateAIResponses(issues);
-        console.log(updatedIssues);
-        await writeResultsToGithub(updatedIssues)
+        // console.log(updatedIssues);
+        // await writeResultsToGithub(updatedIssues)
     }
 }
 
