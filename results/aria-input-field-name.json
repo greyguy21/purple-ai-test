@@ -1,6 +1,0 @@
-{
-  "div_class_role": "<div aria-hidden=\"true\" tabindex=\"-1\">\n  <!-- content here -->\n</div>",
-  "div_role": "<div role=\"listbox\" aria-label=\"Select an option\">",
-  "div_role_style": "<div role=\"listbox\" aria-label=\"Select an option\" style=\"opacity: 1; width: 10730px; left: -870px;\">",
-  "span_aria-autocomplete_aria-expanded_aria-haspopup_aria-owns_role_tabindex": "<span aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-owns=\"filterJobLevel-menu\" role=\"combobox\" tabindex=\"0\" aria-label=\"Job Level Filter\">"
-}

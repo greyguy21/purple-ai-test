@@ -16,11 +16,11 @@
         "needsHtml": false
     },
     "aria-hidden-focus": {
-        "prompt": "Fix this code to ensures aria-hidden elements are not focusable nor contain focusable elements ${htmlSnippet}",
+        "prompt": "Ensure aria-hidden elements are not focusable nor contain focusable elements: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-input-field-name": {
-        "prompt": "Fix this code to ensure every ARIA input field has an accessible name ${htmlSnippet}",
+        "prompt": "How to ensure every ARIA input field has an accessible name: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-meter-name": {
@@ -44,11 +44,11 @@
         "needsHtml": false
     },
     "aria-roles": {
-        "prompt": "Fix the code with invalid element role ${htmlSnippet}",
+        "prompt": "Ensure valid element role: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-toggle-field-name": {
-        "prompt": "Fix this code to have valid aria attribute: ${htmlSnippet}",
+        "prompt": "How to ensure every ARIA toggle field has an accessible name: ${htmlSnippet}",
         "needsHtml": true
     }, 
     "aria-tooltip-name": {
@@ -56,11 +56,11 @@
         "needsHtml": false
     },
     "aria-valid-attr-value": {
-        "prompt": "Fix this code with invalid aria attributes’ values: ${htmlSnippet}",
+        "prompt": "How to ensure valid values for common aria attributes: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-valid-attr": {
-        "prompt": "Fix this code with invalid aria attributes: ${htmlSnippet}",
+        "prompt": "How to ensure aria attributes are valid: ${htmlSnippet}",
         "needsHtml": true
     },
     "blink": {
@@ -160,7 +160,7 @@
         "needsHtml": false
     },
     "nested-interactive": {
-        "prompt": "Ways to make this snippet not have nested interactivity? ${htmlSnippet}",
+        "prompt": "How to ensure this snippet has no nested interactivity: ${htmlSnippet}",
         "needsHtml": true
     },
     "no-autoplay-audio": {
@@ -212,7 +212,7 @@
         "needsHtml": false
     },
     "avoid-inline-spacing": {
-        "prompt": "Fix code snipept such that the style attribute does not have forced line-height,letter-spacing and word-spacing property to ensure inline text spacing is adjustable with custom stylesheets ${htmlSnippet}",
+        "prompt": "How to ensure style attribute does not have forced line-height,letter-spacing and word-spacing property so that inline text spacing is adjustable with custom stylesheets: ${htmlSnippet}",
         "needsHtml": true
     },
     "accesskeys": {
@@ -220,7 +220,7 @@
         "needsHtml": false
     },
     "aria-allowed-role": {
-        "prompt": "Fix the code with invalid element role ${htmlSnippet}",
+        "prompt": "How to ensure element has valid aria role: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-dialog-name": {
@@ -312,7 +312,7 @@
         "needsHtml": false
     },
     "tabindex": {
-        "prompt": "What is inaccessible about this ${htmlSnippet}",
+        "prompt": "How to ensure accessible tab order:  ${htmlSnippet}",
         "needsHtml": true
     },
     "table-duplicate-name": {

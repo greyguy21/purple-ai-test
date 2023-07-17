@@ -1,7 +1,0 @@
-{
-  "section_data-aos_role": "<section data-aos=\"fade-up\" role=\"region\" aria-label=\"Past Event Video\"> \n   <!-- content goes here --> \n</section>",
-  "section_data-aos-delay_data-aos_role": "<section data-aos-delay=\"2600\" data-aos=\"fade-up\" role=\"region\" aria-label=\"Filters\">",
-  "li_aria-hidden_aria-label_aria-roledescription_role_style": "<li aria-hidden=\"false\" aria-label=\"...\" aria-roledescription=\"slide\" role=\"listitem\" style=\"display: block; position: absolute; width: 93.1535%; left: 0%; right: auto; top: 0px; opacity: 1; transition-property: transform, visibility; transition-duration: 0ms, 0ms; transition-delay: 0ms, 0ms; visibility: visible; transform: translate3d(100%, 0px, 0px);\">",
-  "span_aria-label_role": "<span role=\"button\" aria-label=\"...\"></span>",
-  "section_role": "<section aria-label=\"Past Event Video\"> </section>"
-}

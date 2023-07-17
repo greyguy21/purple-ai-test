@@ -49,13 +49,14 @@ const getDataFromGoogleSheets = async () => {
     console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
-    const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
-    // const rows = await formReponses.getRows();
+    // const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    const rows = await formReponses.getRows();
     return rows; 
 }
 
 const generateIssuesToQuery = async (data) => {
     var issues = [];
+    console.log(data);
     for (const d of data) {
        try {
         const results = JSON.parse(d.get('Accessibility Scan Results'));
@@ -68,6 +69,7 @@ const generateIssuesToQuery = async (data) => {
             if (prompts[ruleID].needsHtml) {
                 const snippets = results[ruleID].snippets; 
                 for (const snippet of snippets) {
+                    console.log(ruleID);
                     const basicHTMLLabel = utils.createBasicHTMLLabel(ruleID, snippet);
                     if (await utils.needsQueryForHTML(ruleID, snippet, basicHTMLLabel)) {
                         const promptHTMLSnippet = utils.processHTMLSnippet(snippet);
@@ -156,12 +158,21 @@ const run = async () => {
         fs.mkdirSync('../results');
     }
     
+    // const prompt = "How to ensure accessible tab order:  <button tabindex=\"10000\"><span></span></button>";
+    // const result = await query({
+    //     "flow_id": process.env.OPENAI_FLOW_ID, 
+    //     "inputs": [{
+    //         "prompt": prompt
+    //     }]
+    // })
+    // console.log(result.answer);
+
     const data = await getDataFromGoogleSheets(); 
     if (data.length > 0) {
         const issues = await generateIssuesToQuery(data);
         const updatedIssues = await generateAIResponses(issues);
-        // console.log(updatedIssues);
-        // await writeResultsToGithub(updatedIssues)
+        console.log(updatedIssues);
+        await writeResultsToGithub(updatedIssues)
     }
 }
 

@@ -8,7 +8,6 @@ const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|(
 const createBasicHTMLLabel = (ruleID, html) => {
     if (ruleID === "aria-valid-attr-value") {
         const label = createLabelForAriaValidAttrValue(html);
-        console.log(label);
         return label;
     }
     const label = html.match(htmlTagAndAttributeRegex).toString().replaceAll(",", "_");
