@@ -26,8 +26,8 @@
   ],
   "aria-toggle-field-name": [],
   "aria-valid-attr-value": [
-    "div_role",
-    "section_role"
+    "div_role=\"dialog\"",
+    "section_role=\"region\""
   ],
   "aria-valid-attr": [],
   "marquee": [],
