@@ -16,7 +16,7 @@
         "needsHtml": false
     },
     "aria-hidden-focus": {
-        "prompt": "Ensure aria-hidden elements are not focusable nor contain focusable elements: ${htmlSnippet}",
+        "prompt": "How to ensure aria-hidden elements are not focusable nor contain focusable elements: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-input-field-name": {
@@ -44,7 +44,7 @@
         "needsHtml": false
     },
     "aria-roles": {
-        "prompt": "Ensure valid element role: ${htmlSnippet}",
+        "prompt": "How to ensure valid element role: ${htmlSnippet}",
         "needsHtml": true
     },
     "aria-toggle-field-name": {
