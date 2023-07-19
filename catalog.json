@@ -13,7 +13,7 @@
   "aria-roles": [],
   "aria-toggle-field-name": [],
   "aria-valid-attr-value": [
-    "li_aria-controls_aria-selected_role"
+    "li_role=\"tab\""
   ],
   "aria-valid-attr": [],
   "input-button-name": [],
@@ -25,5 +25,5 @@
   "aria-allowed-role": [
     "form_role=\"form\""
   ],
-  "lastUpdated": "7/19/2023, 12:10:41 PM"
+  "lastUpdated": "7/19/2023, 2:46:23 PM"
 }
