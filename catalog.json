@@ -1,85 +1,14 @@
 {
-  "aria-hidden-focus": [
-    "div_aria-hidden",
-    "div_aria-hidden_data-slick-index_style_tabindex_div",
-    "li_aria-hidden_button_data-role_role_tabindex_type",
-    "div_aria-describedby_aria-hidden_data-slick-index_role_style_tabindex",
-    "li_aria-controls_aria-hidden_aria-selected_role_button_aria-required_data-role_role_tabindex_type",
-    "button_aria-hidden_aria-label_span",
-    "div_aria-hidden_span_span_aria-label_role_tabindex",
-    "li_aria-hidden_style",
-    "div_aria-hidden_style_tabindex",
-    "div_aria-hidden_tabindex",
-    "li_aria-hidden",
-    "li_aria-hidden_span_div_p_a_href"
-  ],
-  "aria-input-field-name": [
-    "div_role",
-    "div_role_style",
-    "span_aria-autocomplete_aria-expanded_aria-haspopup_aria-owns_role_tabindex"
-  ],
-  "aria-roles": [
-    "section_data-aos-delay_data-aos_role",
-    "li_aria-hidden_aria-label_aria-roledescription_role_style",
-    "span_aria-label_role",
-    "section_role"
-  ],
+  "aria-hidden-focus": [],
+  "aria-input-field-name": [],
+  "aria-roles": [],
   "aria-toggle-field-name": [],
-  "aria-valid-attr-value": [
-    "div_role=\"dialog\"",
-    "section_role=\"region\""
-  ],
+  "aria-valid-attr-value": [],
   "aria-valid-attr": [],
   "marquee": [],
-  "nested-interactive": [
-    "li_aria-controls_aria-selected_data-analytics-click-id_data-analytics-section_data-analytics-text_role",
-    "div_role",
-    "div_aria-label_data-aos-delay_data-aos_role_style",
-    "div_aria-label_role",
-    "div_role_tabindex",
-    "button_a_href",
-    "div_role_p_a_aria-expanded_href_role",
-    "span_onclick_role_a_href_u",
-    "div_role_style",
-    "div_aria-label_aria-valuenow_role",
-    "li_aria-controls_aria-expanded_aria-labelledby_aria-selected_role_tabindex_a_href",
-    "figure_alt_role",
-    "li_aria-describedby_aria-hidden_role_style_tabindex"
-  ],
+  "nested-interactive": [],
   "avoid-inline-spacing": [],
-  "aria-allowed-role": [
-    "option_role_value",
-    "label_data-id_data-original-title_role_title",
-    "form_role",
-    "form_data-toggle_role",
-    "img_alt_role",
-    "a_aria-label_href_role_title",
-    "video_aria-label_role",
-    "input_aria-controls_aria-label_aria-selected_name_role_type_value",
-    "picture_role",
-    "li_aria-labelledby_role_style",
-    "li_aria-hidden_aria-labelledby_role_style",
-    "video_role",
-    "h3_aria-label_role_span",
-    "label_for_role",
-    "ul_aria-label_role",
-    "li_aria-hidden_aria-label_aria-roledescription_role_style",
-    "a_aria-label_aria-orientation_aria-valuemax_aria-valuemin_href_role",
-    "ul_role",
-    "li_role",
-    "label_role_title",
-    "section_role",
-    "iframe_aria-label_name_role_style_tabindex_title",
-    "a_href_role",
-    "input_aria-expanded_aria-label_role_type",
-    "label_aria-expanded_for_role_tabindex",
-    "nav_aria-labelledby_aria-modal_role"
-  ],
-  "tabindex": [
-    "button_style_tabindex",
-    "div_style_tabindex",
-    "button_tabindex_span",
-    "input_name_tabindex_type"
-  ],
-  "lastUpdated": "7/14/2023, 3:36:07 AM"
+  "aria-allowed-role": [],
+  "tabindex": [],
+  "lastUpdated": "7/19/2023, 11:57:11 AM"
 }
