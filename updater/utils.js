@@ -30,14 +30,14 @@ const rulesUsingRoles = ['aria-allowed-attr', 'aria-required-attr', 'aria-requir
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
 const createBasicHTMLLabel = (ruleID, html) => {
     if (rulesUsingRoles.includes(ruleID) & html.includes('role')) {
-        const label = createLabelForAriaValidAttrValueWithRole(html);
+        const label = createLabelForRuleWithRole(html);
         return label;
     }
     const label = html.match(htmlTagAndAttributeRegex).toString().replaceAll(",", "_");
     return label;
 }; 
 
-const createLabelForAriaValidAttrValueWithRole = (html) => {
+const createLabelForRuleWithRole = (html) => {
     const htmlTagAndRoleAttributeRegex = new RegExp(/(?<=<)\s*([a-zA-Z][^\s>/]*\b)|role="([^"]*)"/g); 
     const htmlLabel = html.match(htmlTagAndRoleAttributeRegex).toString().replaceAll(',', '_');
     console.log(htmlLabel);
