@@ -1,3 +1,0 @@
-{
-  "role-img-alt": "Screen-readers can access the elements with image roles in the following ways:\n\n1. By reading the text alternative provided in the \"alt\" attribute of the \"img\" element inside the \"div\" element.\n2. By reading the text content of the \"div\" element if no \"alt\" attribute is provided.\n3. By announcing the role of the \"div\" element as an image."
-}

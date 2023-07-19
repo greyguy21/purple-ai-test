@@ -1,3 +1,0 @@
-{
-  "aria-progressbar-name": "To ensure every ARIA progressbar node has an accessible name, the `aria-label` or `aria-labelledby` attribute should be added to the element. \n\nHere's an example of how to add `aria-label`:\n\n```\n<div role=\"progressbar\" id=\"some-id\" aria-label=\"Progress: some-text\"></div>\n```\n\nOr, if there is a label element associated with the progress bar, you can use `aria-labelledby`:\n\n```\n<label for=\"some-id\">Progress:</label>\n<div role=\"progressbar\" id=\"some-id\" aria-labelledby=\"some-id\"></div>\n```\n\nIn both cases, the `aria-label` or `aria-labelledby` attribute provides an accessible name for the progress bar."
-}

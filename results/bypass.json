@@ -1,3 +1,0 @@
-{
-  "bypass": "1. Internal Skip Link:\n```\n<a href=\"#main-content\" class=\"skip-link\">Skip to main content</a>\n<main id=\"main-content\">\n  <!-- Main content goes here -->\n</main>\n```\n\n2. Heading:\n```\n<h1>Page Title</h1>\n```\n\n3. Landmark Region:\n```\n<header>\n  <!-- Header content goes here -->\n</header>\n<nav>\n  <!-- Navigation content goes here -->\n</nav>\n<main>\n  <!-- Main content goes here -->\n</main>\n<footer>\n  <!-- Footer content goes here -->\n</footer>\n```"
-}

@@ -1,3 +1,0 @@
-{
-  "object-alt": "1. Add an `aria-label` attribute to provide a descriptive label for the content within the object element.\n2. Include a `title` attribute to provide additional context for the content within the object element.\n3. Use the `role` attribute to specify the type of object being displayed (e.g. `role=\"document\"`).\n4. Provide alternative text for the object element using the `alt` attribute.\n5. Use the `tabindex` attribute to ensure that the object element can be navigated to using the keyboard.\n6. Include a text link to the content within the object element for users who cannot access it through the object element."
-}

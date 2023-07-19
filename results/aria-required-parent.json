@@ -1,3 +1,0 @@
-{
-  "aria-required-parent": "HTML elements with aria roles that should have aria parent roles are those that contain other elements with aria roles. For example, a `<div>` element with an `aria-live` role that contains a `<span>` element with an `aria-label` role should have an `aria-parent` role to indicate that it is the parent container of the child element with the `aria-label` role. Similarly, a `<table>` element with an `aria-describedby` attribute that references a `<caption>` element with an `aria-label` role should have an `aria-parent` role to indicate that it is the parent container of the child element with the `aria-label` role."
-}

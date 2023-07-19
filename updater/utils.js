@@ -1,12 +1,35 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-const omittedRules = ['html-xml-lang-mismatch', 'frame-tested', 'color-contrast', 'link-in-text-block', 'page-has-heading-one'];
+const omittedRules = [
+    'html-xml-lang-mismatch', 
+    'frame-tested', 
+    'color-contrast', 
+    'link-in-text-block', 
+    'page-has-heading-one',
+    'duplicate-id-aria', 
+    'frame-title-unique', 
+    'frame-title', 
+    'html-has-lang', 
+    'html-lang-valid', 
+    'input-image-alt', 
+    'link-in-text-block', 
+    'list', 
+    'listitem', 
+    'marquee', 
+    'valid-lang', 
+    'video-caption', 
+    'accesskeys', 
+    'empty-heading', 
+    'empty-table-header', 
+    'label-title-only'
+];
 const deprecatedRules = ['aria-roledescription', 'audio-caption', 'duplicate-id-active', 'duplicate-id'];
+const rulesUsingRoles = ['aria-allowed-attr', 'aria-required-attr', 'aria-required-children', 'aria-required-parent', 'aria-roles', 'aria-allowed-role']; 
 
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
 const createBasicHTMLLabel = (ruleID, html) => {
-    if (ruleID === "aria-valid-attr-value" & html.includes('role')) {
+    if (rulesUsingRoles.includes(ruleID) & html.includes('role')) {
         const label = createLabelForAriaValidAttrValueWithRole(html);
         return label;
     }
