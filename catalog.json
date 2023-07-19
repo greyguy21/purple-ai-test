@@ -1,14 +1,22 @@
 {
+  "aria-allowed-attr": [
+    "div_aria-label",
+    "a_aria-label",
+    "div_aria-expanded"
+  ],
   "aria-hidden-focus": [],
   "aria-input-field-name": [],
+  "aria-required-attr": [],
+  "aria-required-children": [],
+  "aria-required-parent": [],
   "aria-roles": [],
   "aria-toggle-field-name": [],
   "aria-valid-attr-value": [],
   "aria-valid-attr": [],
-  "marquee": [],
+  "input-button-name": [],
+  "link-name": [],
   "nested-interactive": [],
   "avoid-inline-spacing": [],
   "aria-allowed-role": [],
-  "tabindex": [],
-  "lastUpdated": "7/19/2023, 12:03:29 PM"
+  "lastUpdated": "7/19/2023, 12:06:00 PM"
 }
