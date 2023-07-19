@@ -1,5 +1,6 @@
 {
   "aria-allowed-attr": [
+    "span_aria-label",
     "div_aria-label",
     "a_aria-label",
     "div_aria-expanded"
@@ -11,12 +12,18 @@
   "aria-required-parent": [],
   "aria-roles": [],
   "aria-toggle-field-name": [],
-  "aria-valid-attr-value": [],
+  "aria-valid-attr-value": [
+    "li_aria-controls_aria-selected_role"
+  ],
   "aria-valid-attr": [],
   "input-button-name": [],
   "link-name": [],
-  "nested-interactive": [],
+  "nested-interactive": [
+    "li_aria-controls_aria-selected_role"
+  ],
   "avoid-inline-spacing": [],
-  "aria-allowed-role": [],
-  "lastUpdated": "7/19/2023, 12:06:00 PM"
+  "aria-allowed-role": [
+    "form_role=\"form\""
+  ],
+  "lastUpdated": "7/19/2023, 12:10:41 PM"
 }

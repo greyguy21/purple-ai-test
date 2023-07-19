@@ -4,17 +4,21 @@ const { execSync } = require('child_process');
 const commitMessage = "Update catalog.json";
 
 const ruleIdsWithHtml = [
-  "aria-hidden-focus",
-  "aria-input-field-name",
-  "aria-roles",
-  "aria-toggle-field-name",
-  "aria-valid-attr-value",
-  "aria-valid-attr",
-  "marquee",
-  "nested-interactive",
-  "avoid-inline-spacing",
-  "aria-allowed-role",
-  "tabindex",
+  'aria-allowed-attr',
+  'aria-hidden-focus',
+  'aria-input-field-name',
+  'aria-required-attr',
+  'aria-required-children',
+  'aria-required-parent',
+  'aria-roles',
+  'aria-toggle-field-name',
+  'aria-valid-attr-value',
+  'aria-valid-attr',
+  'input-button-name',
+  'link-name',
+  'nested-interactive',
+  'avoid-inline-spacing',
+  'aria-allowed-role'
 ];
 
 
@@ -41,13 +45,13 @@ const run = async () => {
       keys.forEach((key) => {
         if (!outputJson[ruleId]) {
           outputJson[ruleId] = [];
-        } else {
-          outputJson[ruleId].push(key);
-        }
+        } 
+        outputJson[ruleId].push(key);
       });
     } else {
       outputJson[ruleId] = [];
     }
+    console.log(outputJson);
   });
   
   outputJson["lastUpdated"] = new Date().toLocaleString();
