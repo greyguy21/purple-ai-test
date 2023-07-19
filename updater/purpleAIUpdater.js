@@ -56,7 +56,6 @@ const getDataFromGoogleSheets = async () => {
 
 const generateIssuesToQuery = async (data) => {
     var issues = [];
-    console.log(data);
     for (const d of data) {
        try {
         const results = JSON.parse(d.get('Accessibility Scan Results'));
@@ -154,8 +153,8 @@ const writeResultsToGithub = async (updatedIssues) => {
  }
 
 const run = async () => {
-    if (!fs.existsSync('../results')) {
-        fs.mkdirSync('../results');
+    if (!fs.existsSync('./results')) {
+        fs.mkdirSync('./results');
     }
     
     // const prompt = "How to ensure accessible tab order:  <button tabindex=\"10000\"><span></span></button>";
