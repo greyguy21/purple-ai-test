@@ -1,3 +1,3 @@
 {
-  "scrollable-region-focusable": "To make the scrollable element keyboard accessible, you can add the `tabindex` attribute with a value of \"0\". This will make the element focusable using the keyboard's Tab key. Also, add the `role` attribute with a value of \"region\" to indicate the purpose of the element to assistive technologies like screen readers.\n\n```html\n<div id=\"some-id\" tabindex=\"0\" role=\"region\">\n  <!-- scrollable content -->\n</div>\n```"
+  "scrollable-region-focusable": "To make the scrollable element keyboard accessible, you can add the `tabindex` attribute with a value of `0`. This will allow the element to receive keyboard focus, and users can scroll using the arrow keys.\n\n```html\n<div id=\"some-id\" tabindex=\"0\">\n  <!-- scrollable content -->\n</div>\n```"
 }
