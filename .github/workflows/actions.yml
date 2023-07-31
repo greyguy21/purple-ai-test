@@ -26,7 +26,7 @@ jobs:
           SCOPE: ${{ secrets.SCOPE }}
           GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-          GOOGLE_SHEET_ID: "1us6kvGJ4vZzZNwj_0xVhcj12KcT_PqUe-H5s7lSroTA"
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: |
           node updater/purpleAIUpdater.js 
           node generateCatalog.js
