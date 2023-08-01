@@ -25,7 +25,7 @@ const omittedRules = [
     'label-title-only'
 ];
 const deprecatedRules = ['aria-roledescription', 'audio-caption', 'duplicate-id-active', 'duplicate-id'];
-const rulesUsingRoles = ['aria-allowed-attr', 'aria-required-attr', 'aria-required-children', 'aria-required-parent', 'aria-roles', 'aria-allowed-role']; 
+const rulesUsingRoles = ['aria-allowed-attr', 'aria-required-attr', 'aria-required-children', 'aria-required-parent', 'aria-roles', 'aria-allowed-role', 'aria-valid-attr-value']; 
 
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
 const createBasicHTMLLabel = (ruleID, html) => {
@@ -38,8 +38,10 @@ const createBasicHTMLLabel = (ruleID, html) => {
 }; 
 
 const createLabelForRuleWithRole = (html) => {
-    const htmlTagAndRoleAttributeRegex = new RegExp(/(?<=<)\s*([a-zA-Z][^\s>/]*\b)|role="([^"]*)"/g); 
-    const htmlLabel = html.match(htmlTagAndRoleAttributeRegex).toString().replaceAll(',', '_');
+    const htmlRoleAttributeRegex = new RegExp(/role="([^"]*)"/g); 
+    const outermostHTMLTag = html.match(htmlTagAndAttributeRegex)[0]; 
+    const outermostRoleAttribute = html.match(htmlRoleAttributeRegex)[0];
+    const htmlLabel = `${outermostHTMLTag}_${outermostRoleAttribute}`;
     console.log(htmlLabel);
 
     return htmlLabel ? htmlLabel : "";
@@ -80,6 +82,10 @@ const needsQueryForHTML = async (ruleID, html, label) => {
         return true; 
     }
 
+    if (rulesUsingRoles.includes(ruleID) & html.includes('role')) {
+        return !data[label];
+    }
+    
     const htmlArr = html.match(htmlTagAndAttributeRegex);
     if (data[label]) {
         return false; 

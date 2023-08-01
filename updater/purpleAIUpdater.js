@@ -49,8 +49,8 @@ const getDataFromGoogleSheets = async () => {
     console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
-    // const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
-    const rows = await formReponses.getRows();
+    const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
+    // const rows = await formReponses.getRows();
     return rows; 
 }
 
