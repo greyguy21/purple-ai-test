@@ -1,9 +1,10 @@
 {
   "aria-allowed-attr": [
     "span_aria-label",
-    "div_aria-label",
     "a_aria-label",
-    "div_aria-expanded"
+    "div_aria-expanded",
+    "div_aria-label",
+    "a_aria-label_span_span"
   ],
   "aria-hidden-focus": [
     "div_aria-hidden_style"
@@ -16,7 +17,7 @@
   "aria-toggle-field-name": [],
   "aria-valid-attr-value": [
     "li_role=\"tab\"",
-    "li_aria-controls_aria-selected_role"
+    "div_role=\"tabpanel\""
   ],
   "aria-valid-attr": [
     "a_aria-controls_aria-disabled_aria-role_tabindex"
@@ -28,7 +29,9 @@
   ],
   "avoid-inline-spacing": [],
   "aria-allowed-role": [
-    "form_role=\"form\""
+    "form_role=\"form\"",
+    "label_role=\"radio\"",
+    "option_role=\"none\""
   ],
-  "lastUpdated": "7/31/2023, 9:55:07 AM"
+  "lastUpdated": "8/1/2023, 2:49:07 PM"
 }
