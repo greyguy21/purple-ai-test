@@ -1,0 +1,3 @@
+{
+  "button_role_type_i": "The issue in the code snippet is that the button element is marked as presentational with the role=\"presentation\" attribute, but it has global ARIA (role) and tabindex attributes, which contradicts the purpose of a presentational element.\n\nThe correct version of the code snippet should be:\n\n<button type=\"button\"><i></i></button>\n\nIn this corrected version, the role=\"presentation\" attribute is removed, allowing the button to have its default semantics and be focusable by default without needing tabindex."
+}

@@ -1,0 +1,3 @@
+{
+  "a_role=\"tab\"": "The issue with the given code snippet is that the ARIA role \"tab\" is not contained within a parent element with the role \"tablist\". To fix this, you need to wrap the anchor element in a parent element with the role \"tablist\".\n\nCorrected code snippet:\n\n```\n<div role=\"tablist\">\n  <a aria-controls=\"full-fsbb-today\" aria-selected=\"true\" href=\"...\" role=\"tab\"></a>\n</div>\n```"
+}
