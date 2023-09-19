@@ -1,0 +1,3 @@
+{
+  "a_role=\"tab\"": "The issue in the given code snippet is that the `role=\"tab\"` attribute is used on an anchor element (`<a>`), but it should be contained within an element with the `role=\"tablist\"` attribute. To fix the issue, we should add a parent element with the `role=\"tablist\"` attribute. Here's the corrected version of the code snippet:\n\n```html\n<div role=\"tablist\">\n  <a aria-controls=\"full-fsbb-today\" aria-selected=\"true\" href=\"...\" role=\"tab\"></a>\n</div>\n```"
+}

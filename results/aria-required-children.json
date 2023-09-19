@@ -1,0 +1,3 @@
+{
+  "ul_role=\"tablist\"": "The issue in the given code snippet is that the `ul` element with the role \"tablist\" does not have its required child elements with the role \"tab\". To fix this, you should add `li` elements with the role \"tab\" as children of the `ul` element.\n\nHere's the correct version of the code snippet:\n\n```\n<ul role=\"tablist\">\n  <li role=\"tab\">Tab 1</li>\n  <li role=\"tab\">Tab 2</li>\n  <li role=\"tab\">Tab 3</li>\n</ul>\n```\n\nThis code snippet now has the required child roles for the \"tablist\" ARIA role, making it more accessible."
+}
