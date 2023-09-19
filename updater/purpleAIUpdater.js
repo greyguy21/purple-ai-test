@@ -2,15 +2,12 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { JWT } = require('google-auth-library');
 const { config } = require("dotenv");
 const fs = require('fs');
-// const GitHub = require('github-api');
 const axios = require('axios');
-const prettier = require('prettier');
 const utils = require('./utils');
 const { execSync } = require('child_process');
 const { silentLogger } = require('./logs'); 
 
-const range = require('../range.json'); 
-const prompts = require('../purpleAIPrompts.json');
+const { purpleAiRules, rangePath, purpleAIPromptsPath, resultsFolderPath } = require('./constants');
 
 config(); 
 
@@ -21,11 +18,6 @@ const serviceAccountAuth = new JWT({
         'https://www.googleapis.com/auth/spreadsheets'
     ]
 })
-
-// const github = new GitHub({
-//     token: process.env.GITHUB_TOKEN
-// });
-// const repo = github.getRepo('greyguy21', 'purple-ai-test');
 
 const HEADERS = {
     "Content-Type": "application/json",
@@ -46,96 +38,81 @@ const query = async (payload) => {
 const getDataFromGoogleSheets = async () => {
     const sheet = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
     await sheet.loadInfo();
-    console.log(sheet.title);
 
     const formReponses = sheet.sheetsByIndex[0];
+    const range = utils.getRange();
     const rows = await formReponses.getRows({offset: range.offset, limit: range.limit}); // can set offset and limit
-    // const rows = await formReponses.getRows();
     return rows; 
 }
 
-const generateIssuesToQuery = async (data) => {
+const generateIssuesToQuery = (data) => {
     var issues = [];
     for (const d of data) {
-       try {
-        const results = JSON.parse(d.get('Accessibility Scan Results'));
-        const website = d.get('Website URL');
-        console.log(website)
-        for (const ruleID of Object.keys(results)) {
-            if (utils.omittedRules.includes(ruleID) || utils.deprecatedRules.includes(ruleID)) {
-                continue;
-            }
-            if (prompts[ruleID].needsHtml) {
-                const snippets = results[ruleID].snippets; 
-                for (const snippet of snippets) {
-                    console.log(ruleID);
-                    const basicHTMLLabel = utils.createBasicHTMLLabel(ruleID, snippet);
-                    if (await utils.needsQueryForHTML(ruleID, snippet, basicHTMLLabel)) {
+        try {
+            const results = JSON.parse(d.get('Accessibility Scan Results'));
+            const website = d.get('Website URL');
+            console.log('website: ', website);
+            for (const ruleID of Object.keys(results)) {
+                if (purpleAiRules.includes(ruleID)) {
+                    const snippets = results[ruleID].snippets; 
+                    for (const snippet of snippets) {  
+                        const basicHTMLLabel = utils.createBasicHTMLLabel(ruleID, snippet);
                         const promptHTMLSnippet = utils.processHTMLSnippet(snippet);
                         issues.push({
-                            issueID: ruleID, 
+                            ruleID: ruleID, 
                             htmlSnippet: snippet,
                             basicHTMLLabel: basicHTMLLabel,
                             promptHTMLSnippet: promptHTMLSnippet
                         })
                     }
-                }            
-            } else {
-                if (await utils.needsQuery(ruleID)) {
-                    issues.push({issueID: ruleID});
                 }
-            }
-        }
-       } catch (e) {
+            } 
+        } catch (e) {
         const errorMessage = `${e}: ${d['_rawData']}`
         silentLogger.error(errorMessage);
        }
     }
-    utils.updateRowRange(data, range);
-    console.log(issues);
+    utils.updateRowRange(data);
     return issues; 
+}
+
+const getAIResponse = async (promptHTMLSnippet, ruleID) => {
+    const prompts = JSON.parse(fs.readFileSync(purpleAIPromptsPath));
+    const htmlSnippet = promptHTMLSnippet;
+    const prompt = eval('`' + prompts[ruleID] + '`');
+
+    console.log(prompt);
+
+    const result = await query({
+        "flow_id": process.env.OPENAI_FLOW_ID, 
+        "inputs": [{
+            "prompt": prompt
+        }]
+    })
+
+    console.log(result)
+    return result.status === 200 ? result.answer : null;
 }
 
 const generateAIResponses = async (issues) => {
     const updatedIssues = new Set();
+    const catalog = utils.getCatalog();
     for (const i of issues) {
-        console.log(i.issueID);
-        let prompt;
-        if (prompts[i.issueID].needsHtml) {
-            if (await utils.needsQueryForHTML(i.issueID, i.htmlSnippet, i.basicHTMLLabel)) {
-                const htmlSnippet = i.promptHTMLSnippet;
-                prompt = eval('`' + prompts[i.issueID].prompt + '`');
-            } else {
-                continue;
-            }
-        } else {
-            prompt = prompts[i.issueID].prompt;
-        }
-        
-        console.log(prompt);
+        const { ruleID, htmlSnippet, basicHTMLLabel, promptHTMLSnippet } = i;
+        const needsQuery = utils.needsQuery(ruleID, htmlSnippet, basicHTMLLabel, catalog); 
+        if (needsQuery) {
+            const response = await getAIResponse(promptHTMLSnippet, ruleID); 
+            if (response) {
+                utils.writeAIResponse(ruleID, basicHTMLLabel, response); 
+                // update catalog
+                catalog[ruleID] = catalog[ruleID] ? catalog[ruleID] : [];
+                catalog[ruleID].push(basicHTMLLabel);
 
-        const result = await query({
-            "flow_id": process.env.OPENAI_FLOW_ID, 
-            "inputs": [{
-                "prompt": prompt
-            }]
-        })
-        console.log(result)
-        const answer = result.status === 200 ? result.answer : null;
-        if (answer) {
-            const resultPath = `./results/${i.issueID}.json`; 
-            var data = {}; 
-            if (fs.existsSync(resultPath)) {
-                data = JSON.parse(fs.readFileSync(resultPath));
+                updatedIssues.add(ruleID)
             }
-
-            const label = prompts[i.issueID].needsHtml ? i.basicHTMLLabel : i.issueID;
-            console.log(label);
-            data[label] = answer; 
-            fs.writeFileSync(resultPath, prettier.format(JSON.stringify(data), {parser: "json"}));
-            updatedIssues.add(i.issueID)
         }
     }
+    utils.writeCatalog(catalog);
     return updatedIssues;
 }
 
@@ -145,10 +122,10 @@ const writeResultsToGithub = async (updatedIssues) => {
         for (const issue of updatedIssues) {
             commitMessage += `${issue}.json `; 
         }
-        console.log(commitMessage);
         execSync(`git pull && git add results && git commit -m "${commitMessage}"`)  
     }
     execSync(`git pull && git add range.json && git commit -m "Update range.json"`)
+    execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json}"`) 
     execSync(`git push`)
  }
 
@@ -157,6 +134,7 @@ const run = async () => {
         fs.mkdirSync('./results');
     }
     
+    // for testing
     // const prompt = "How to ensure accessible tab order:  <button tabindex=\"10000\"><span></span></button>";
     // const result = await query({
     //     "flow_id": process.env.OPENAI_FLOW_ID, 
@@ -168,9 +146,8 @@ const run = async () => {
 
     const data = await getDataFromGoogleSheets(); 
     if (data.length > 0) {
-        const issues = await generateIssuesToQuery(data);
+        const issues = generateIssuesToQuery(data);
         const updatedIssues = await generateAIResponses(issues);
-        console.log(updatedIssues);
         await writeResultsToGithub(updatedIssues)
     }
 }

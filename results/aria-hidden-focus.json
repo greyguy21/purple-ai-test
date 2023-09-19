@@ -1,3 +1,0 @@
-{
-  "div_aria-hidden_style": "To ensure that an element with `aria-hidden=\"true\"` is not focusable and does not contain focusable elements, you should add `tabindex=\"-1\"` to the element and any focusable child elements. This will prevent the element and its focusable children from being part of the tab order.\n\nHere's an example:\n\n```\n<div aria-hidden=\"true\" style=\"width: 394px;\" tabindex=\"-1\">\n  <input type=\"text\" tabindex=\"-1\">\n  <button tabindex=\"-1\">Click me</button>\n  <a href=\"#\" tabindex=\"-1\">Link</a>\n</div>\n```\n\nIn this example, the `div` element and its focusable children (input, button, and link) all have `tabindex=\"-1\"` attribute, which means they will not be focusable using the keyboard."
-}

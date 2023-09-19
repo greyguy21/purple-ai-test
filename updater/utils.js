@@ -1,37 +1,11 @@
 const fs = require('fs');
-const { execSync } = require('child_process');
-
-const omittedRules = [
-    'html-xml-lang-mismatch', 
-    'frame-tested', 
-    'color-contrast', 
-    'link-in-text-block', 
-    'page-has-heading-one',
-    'duplicate-id-aria', 
-    'frame-title-unique', 
-    'frame-title', 
-    'html-has-lang', 
-    'html-lang-valid', 
-    'input-image-alt', 
-    'link-in-text-block', 
-    'list', 
-    'listitem', 
-    'marquee', 
-    'valid-lang', 
-    'video-caption', 
-    'accesskeys', 
-    'empty-heading', 
-    'empty-table-header', 
-    'label-title-only'
-];
-const deprecatedRules = ['aria-roledescription', 'audio-caption', 'duplicate-id-active', 'duplicate-id'];
-const rulesUsingRoles = ['aria-allowed-attr', 'aria-required-attr', 'aria-required-children', 'aria-required-parent', 'aria-roles', 'aria-allowed-role', 'aria-valid-attr-value']; 
+const prettier = require('prettier');
+const { rulesUsingRoles, resultsFolderPath, rangePath, catalogPath } = require('./constants');
 
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
 const createBasicHTMLLabel = (ruleID, html) => {
-    if (rulesUsingRoles.includes(ruleID) & html.includes('role')) {
-        const label = createLabelForRuleWithRole(html);
-        return label;
+    if (rulesUsingRoles.includes(ruleID) && html.includes('role')) {
+        return createLabelForRuleWithRole(html);
     }
     const label = html.match(htmlTagAndAttributeRegex).toString().replaceAll(",", "_");
     return label;
@@ -42,9 +16,7 @@ const createLabelForRuleWithRole = (html) => {
     const outermostHTMLTag = html.match(htmlTagAndAttributeRegex)[0]; 
     const outermostRoleAttribute = html.match(htmlRoleAttributeRegex)[0];
     const htmlLabel = `${outermostHTMLTag}_${outermostRoleAttribute}`;
-    console.log(htmlLabel);
-
-    return htmlLabel ? htmlLabel : "";
+    return htmlLabel || "";
 }
 
 const processHTMLSnippet = (html) => {
@@ -52,70 +24,77 @@ const processHTMLSnippet = (html) => {
     return processed;
 };
 
-const updateRowRange = async (rows, range) => {
+const getRange = () => {
+    return JSON.parse(fs.readFileSync(rangePath));
+}
+const updateRowRange = async (rows) => {
+    const range = getRange();
     if (rows.length <= range.limit && rows.length > 0) {
         range.offset += rows.length;
        fs.writeFileSync('./range.json', JSON.stringify(range));
     }
 };
 
-const getResults = async (ruleID) => {
-    const resultPath = `./results/${ruleID}.json`; 
-    let data;
-    if (!fs.existsSync(resultPath)) {
-        data = null;
-    } else {
-        data = JSON.parse(fs.readFileSync(resultPath))
-    }
-    return data;
-};
-
-const needsQuery = async (ruleID) => {
-    const data = await getResults(ruleID);
-    return !data;
-};
-
-const needsQueryForHTML = async (ruleID, html, label) => {
-    const data = await getResults(ruleID);
-    
-    if (!data) {
+const needsQuery = (ruleID, html, label, catalog) => {
+    // no information for current rule 
+    if (!catalog[ruleID] || catalog[ruleID].length === 0) {
         return true; 
     }
 
-    if (rulesUsingRoles.includes(ruleID) & html.includes('role')) {
-        return !data[label];
-    }
-    
-    const htmlArr = html.match(htmlTagAndAttributeRegex);
-    if (data[label]) {
+    // response exists for exact label 
+    if (catalog[ruleID].includes(label)) {
         return false; 
     }
 
-    // let query = {currentCount: 0, key: null}; 
-    let currentCount = 0;
-    for (const key of Object.keys(data)) {
-        const keyArr = key.split('_'); 
-        const count = keyArr.reduce((count, curr, index) => {
-            if (curr === htmlArr[index]) {
-                return count + 1; 
-            }
-            return count;
-        }, 0)
-        
-        if (count >= 3 && count > currentCount) {
-            currentCount = count; 
-        }
-    } 
-    return currentCount === 0;
-};
+    // rule requires role 
+    if (rulesUsingRoles.includes(ruleID) && html.includes('role')) {
+        return !catalog[ruleID].includes(label);
+    }
+
+    // count the number of elements in keyArr that
+    // have matching elements at the same index in currentLabelList
+    // return match if >= 3 elements matching
+    const currentLabelList = html.match(htmlTagAndAttributeRegex);
+    const hasMatches = catalog[ruleID].some(label => {
+        const keyArr = label.split('_');
+        const attrMatch = keyArr.filter((key, index) => currentLabelList[index] === key);
+
+        return attrMatch.length >= 3;
+    })
+    return !hasMatches;
+}
+
+const writeAIResponse = (ruleID, basicHTMLLabel, response) => {
+     const resultPath = `${resultsFolderPath}/${ruleID}.json`; 
+     var data = {}; 
+     if (fs.existsSync(resultPath)) {
+         data = JSON.parse(fs.readFileSync(resultPath));
+     }
+     data[basicHTMLLabel] = response;
+     fs.writeFileSync(resultPath, prettier.format(JSON.stringify(data), {parser: "json"}));
+}
+
+const getCatalog = () => {
+    var catalog; 
+    if (fs.existsSync(catalogPath)) {
+        catalog = JSON.parse(fs.readFileSync(catalogPath));
+    } else {
+        catalog = {};
+    }
+    return catalog;
+}
+
+const writeCatalog = (catalog) => {
+    fs.writeFileSync(catalogPath, prettier.format(JSON.stringify(catalog), {parser: 'json'}));
+}
 
 module.exports = {
-    omittedRules, 
-    deprecatedRules, 
     createBasicHTMLLabel, 
     processHTMLSnippet, 
+    getRange,
     updateRowRange,
-    getResults, 
     needsQuery,
-    needsQueryForHTML
+    writeAIResponse,
+    getCatalog,
+    writeCatalog
 }

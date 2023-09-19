@@ -1,3 +1,0 @@
-{
-  "select-name": "To make the select element accessible using for and id, you can add a label element associated with the select element. Here's an example:\n\n```html\n<div id=\"someId\">\n  <label for=\"selectId\">Choose an option:</label>\n  <select id=\"selectId\" aria-labelledby=\"someId\">\n    <option>someOption</option>\n  </select>\n</div>\n```\n\nIn this example, I added a label element with a \"for\" attribute that matches the \"id\" attribute of the select element. This way, screen readers and other assistive technologies can associate the label with the select element, making it more accessible."
-}
