@@ -1,3 +1,0 @@
-{
-  "ul_role=\"tablist\"": "The issue in the code snippet is that the ARIA role \"tablist\" is used on a `ul` element, but its required child role \"tab\" is missing on the list items (`li`).\n\nHere's the correct version of the code snippet:\n\n```html\n<ul role=\"tablist\">\n  <li role=\"tab\">Tab 1</li>\n  <li role=\"tab\">Tab 2</li>\n  <li role=\"tab\">Tab 3</li>\n</ul>\n```\n\nIn this corrected snippet, the list items (`li`) have been given the required child role \"tab\"."
-}

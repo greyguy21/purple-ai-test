@@ -123,9 +123,8 @@ const writeResultsToGithub = async (updatedIssues) => {
             commitMessage += `${issue}.json `; 
         }
         execSync(`git pull && git add results && git commit -m "${commitMessage}"`)  
+        execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json"`) 
     }
-    execSync(`git pull && git add range.json && git commit -m "Update range.json"`)
-    execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json"`) 
     execSync(`git push`)
  }
 

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const prettier = require('prettier');
+const { execSync } = require('child_process');
 const { rulesUsingRoles, resultsFolderPath, rangePath, catalogPath } = require('./constants');
 
 const htmlTagAndAttributeRegex = new RegExp(/((?<=[<])\s*([a-zA-Z][^\s>/]*)\b)|([\w-]+)\s*(?==\s*["']([^"']*)["'])/g);
@@ -55,9 +56,10 @@ const needsQuery = (ruleID, html, label, catalog) => {
     // have matching elements at the same index in currentLabelList
     // return match if >= 3 elements matching
     const currentLabelList = html.match(htmlTagAndAttributeRegex);
+    const currentLabelSet = new Set(currentLabelList);
     const hasMatches = catalog[ruleID].some(label => {
         const keyArr = label.split('_');
-        const attrMatch = keyArr.filter((key, index) => currentLabelList[index] === key);
+        const attrMatch = keyArr.filter(key => currentLabelSet.has(key));
 
         return attrMatch.length >= 3;
     })
