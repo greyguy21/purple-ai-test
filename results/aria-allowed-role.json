@@ -1,3 +1,4 @@
 {
-  "button_role=\"presentation\"": "The issue in the given code snippet is that the button element has a role attribute with the value \"presentation\", which is inappropriate for a button. The role attribute should be removed since the button element has its own semantics.\n\nHere's the corrected version of the code snippet:\n\n```html\n<button type=\"button\"><i></i></button>\n```"
+  "button_role=\"presentation\"": "The issue in the given code snippet is that the button element has a role attribute with the value \"presentation\", which is inappropriate for a button. The role attribute should be removed since the button element has its own semantics.\n\nHere's the corrected version of the code snippet:\n\n```html\n<button type=\"button\"><i></i></button>\n```",
+  "form_role=\"form\"": "The issue in the given code snippet is that the `role` attribute has an inappropriate value. In this case, the `form` element already has a default role of \"form\", so adding the `role` attribute with the same value is redundant and unnecessary.\n\nHere's the correct version of the code snippet:\n\n```\n<form>\n```"
 }

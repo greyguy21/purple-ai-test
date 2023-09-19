@@ -1,0 +1,3 @@
+{
+  "div": "The issue in the given code snippet is that the scrollable content is not accessible by keyboard. To fix this, you can add the `tabindex` attribute to the scrollable `div` element, allowing it to be focused with the keyboard. Here's the corrected code snippet:\n\n```html\n<div tabindex=\"0\">\n  <!-- Scrollable content goes here -->\n</div>\n```\n\nBy adding `tabindex=\"0\"`, the scrollable `div` will be included in the natural tab order of the page and can be focused using the keyboard."
+}
