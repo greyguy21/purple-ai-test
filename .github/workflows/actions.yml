@@ -29,7 +29,6 @@ jobs:
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
         run: |
           node updater/purpleAIUpdater.js 
-          node generateCatalog.js
       - name: Upload Artifact 
         uses: actions/upload-artifact@v3
         with: 
