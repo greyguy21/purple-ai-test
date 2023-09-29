@@ -50,8 +50,7 @@ const generateIssuesToQuery = (data) => {
     for (const d of data) {
         try {
             const results = JSON.parse(d.get('Accessibility Scan Results'));
-            const website = d.get('Website URL');
-            console.log('website: ', website);
+
             for (const ruleID of Object.keys(results)) {
                 if (purpleAiRules.includes(ruleID)) {
                     const snippets = results[ruleID].snippets; 
