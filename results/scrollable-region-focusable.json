@@ -1,3 +1,0 @@
-{
-  "div": "The issue in the given code snippet is that the scrollable content is not accessible using the keyboard. To fix this accessibility issue, we can add a `tabindex` attribute to the `div` element, allowing it to receive keyboard focus and making it accessible by keyboard. \n\nHere's the corrected version of the code snippet:\n\n```html\n<div tabindex=\"0\">\n  <!-- Scrollable content goes here -->\n</div>\n```\n\nBy adding `tabindex=\"0\"`, the `div` element becomes focusable in the order it appears in the DOM, allowing users to navigate and interact with the scrollable content using the keyboard."
-}

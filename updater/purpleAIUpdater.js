@@ -112,6 +112,7 @@ const generateAIResponses = async (issues) => {
             }
         }
     }
+    catalog["lastUpdated"] = new Date().toLocaleString();
     utils.writeCatalog(catalog);
     return updatedIssues;
 }
@@ -123,11 +124,18 @@ const writeResultsToGithub = async (updatedIssues) => {
             commitMessage += `${issue}.json `; 
         }
         execSync(`git pull && git add results && git commit -m "${commitMessage}"`)  
-        execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json"`) 
     }
+    execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json"`) 
     execSync(`git pull && git add range.json && git commit -m "Update range.json"`)
     execSync(`git push`)
  }
+
+const writeCatalogLastUpdatedToGithub = () => {
+    const catalog = utils.getCatalog();
+    catalog["lastUpdated"] = new Date().toLocaleString();
+    utils.writeCatalog(catalog);
+    execSync(`git pull && git add catalog.json && git commit -m "Update catalog.json"`) 
+}
 
 const run = async () => {
     if (!fs.existsSync('./results')) {
@@ -144,11 +152,13 @@ const run = async () => {
     // })
     // console.log(result.answer);
 
-    const data = await getDataFromGoogleSheets(); 
+    const data = await getDataFromGoogleSheets();
     if (data.length > 0) {
         const issues = generateIssuesToQuery(data);
         const updatedIssues = await generateAIResponses(issues);
-        await writeResultsToGithub(updatedIssues)
+        await writeResultsToGithub(updatedIssues);
+    } else {
+        writeCatalogLastUpdatedToGithub();
     }
 }
 
