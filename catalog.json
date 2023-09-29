@@ -1,1 +1,19 @@
-{ "lastUpdated": "9/29/2023, 2:32:24 PM" }
+{
+  "lastUpdated": "9/29/2023, 2:36:26 PM",
+  "label": ["input_tabindex_value", "input_type_value"],
+  "aria-required-parent": ["a_role=\"tab\""],
+  "aria-required-children": ["ul_role=\"tablist\""],
+  "landmark-unique": [
+    "nav",
+    "nav_aria-label",
+    "footer_onclick",
+    "div_aria-label_role",
+    "header",
+    "nav_style"
+  ],
+  "aria-allowed-role": ["button_role=\"presentation\"", "form_role=\"form\""],
+  "presentation-role-conflict": ["button_role_type_i"],
+  "scrollable-region-focusable": ["div"],
+  "aria-allowed-attr": ["div_aria-expanded"],
+  "select-name": ["select_name"]
+}
