@@ -1,0 +1,4 @@
+{
+  "button_role=\"presentation\"": "The issue in the given code snippet is that the button element has an inappropriate role attribute value \"presentation\". The \"presentation\" role is used to remove the semantic meaning of an element, which is not suitable for a button. The correct version of the code snippet should not include the role attribute for a button element.\n\nCorrect version:\n\n<button type=\"button\"><i></i></button>",
+  "form_role=\"form\"": "The issue in the given code snippet is that the role attribute has an inappropriate value. The `form` element already has a default role of \"form\", so it is unnecessary to add a role attribute with the same value. To fix this, simply remove the role attribute from the `form` element.\n\nCorrected code snippet:\n\n```\n<form>\n```"
+}
